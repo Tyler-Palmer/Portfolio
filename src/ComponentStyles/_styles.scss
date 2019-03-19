@@ -1,0 +1,13 @@
+@import "_base";
+@import "../Nav/nav";
+@import "../Landing/landing";
+
+*{
+    text-decoration: none;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    list-style: none;
+}
