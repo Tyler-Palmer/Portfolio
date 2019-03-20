@@ -1,6 +1,7 @@
 @import "_base";
-@import "../Nav/nav";
-@import "../Landing/landing";
+@import "../Components/Nav/nav";
+@import "../Components/Landing/landing";
+@import "../Components/Header/Header";
 
 *{
     text-decoration: none;
@@ -10,4 +11,5 @@
     border: none;
     outline: none;
     list-style: none;
+    font-family: "Roboto", sans-serif !important;
 }
