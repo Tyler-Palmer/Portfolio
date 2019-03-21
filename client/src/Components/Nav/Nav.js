@@ -1,22 +1,42 @@
-import React, { Component } from 'react'
-import { withContent } from '../../Context/ContentProvider'
-class Nav extends Component{
-    
-    render(){
-        return(
-            <div className="nav-container">
-                <div className="navigation">
-                {
-                    this.props.things.map(thing => (
-                        <div key={thing.id}>
-                            <a href={`#${thing.id}`}>{thing.headline}</a>
-                        </div>
-                    ))
-                }
-                </div>
+import React, { Component } from "react";
+import { withContent } from "../../Context/ContentProvider";
+import styled, { css } from "styled-components";
+
+const Anchor = styled.a`
+  display: block;
+  padding-bottom: 1px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #6665DD;
+
+  ${props =>
+    props.selected
+      ? css`
+          border-bottom: 2px solid rgba(0,0,0,.35);
+          font-weight: bold;
+        `
+      : null};
+`;
+
+class Nav extends Component {
+  render() {
+    return (
+      <div className="nav-container">
+        <div className="navigation">
+          {this.props.things.map(thing => (
+            <div key={thing.id}>
+              <Anchor 
+                href={`#${thing.id}`}
+                selected={thing.id === 'a'}
+                >
+                {thing.headline}
+              </Anchor>
             </div>
-        )
-    }
+          ))}
+        </div>
+      </div>
+    );
+  }
 }
 
-export default withContent(Nav)
+export default withContent(Nav);
