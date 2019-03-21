@@ -1,17 +1,22 @@
 import React, { Component } from 'react'
-
+import { withContent } from '../../Context/ContentProvider'
 class Nav extends Component{
     
     render(){
         return(
-            <div>
-                <ul>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Connect</a></li>
-                </ul>
+            <div className="nav-container">
+                <div className="navigation">
+                {
+                    this.props.things.map(thing => (
+                        <div key={thing.id}>
+                            <a href={`#${thing.id}`}>{thing.headline}</a>
+                        </div>
+                    ))
+                }
+                </div>
             </div>
         )
     }
 }
 
-export default Nav
+export default withContent(Nav)
