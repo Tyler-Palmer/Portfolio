@@ -35,6 +35,7 @@ class Landing extends Component {
               this.setState({
                 activeThing
               })
+              this.props.updateActive2(this.state.activeThing)
             }
         };
 

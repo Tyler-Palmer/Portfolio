@@ -5,14 +5,34 @@ import Nav from "./Components/Nav/Nav";
 import Landing from "./Components/Landing/Landing";
 
 class App extends Component {
+	constructor(){
+		super()
+		this.state ={
+			activeThing2: {
+                id: null,
+                ratio: 0
+            }
+		}
+	}
+
+	updateActive2 = (params) => {
+		this.setState({
+			activeThing2 : params
+		})
+	}
+
   render() {
     return (
       <div>
         <Header />
         <div className="main-wrapper">
-          <Nav />
+          <Nav activeThing2 = {this.state.activeThing2}/>
           <Switch>
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/" render = { props => <Landing
+															{...props} 
+															updateActive2 = {this.updateActive2}
+															activeThing2 = {this.state.activeThing2}
+															/>} />
           </Switch>
         </div>
       </div>

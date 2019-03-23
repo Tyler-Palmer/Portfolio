@@ -19,6 +19,7 @@ const Anchor = styled.a`
 `;
 
 class Nav extends Component {
+
   render() {
     return (
       <div className="nav-container">
@@ -27,7 +28,7 @@ class Nav extends Component {
             <div key={thing.id}>
               <Anchor 
                 href={`#${thing.id}`}
-                selected={thing.id === 'a'}
+                selected={thing.id === this.props.activeThing2.id}
                 >
                 {thing.headline}
               </Anchor>

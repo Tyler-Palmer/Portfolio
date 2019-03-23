@@ -12,7 +12,7 @@ const lorem = new LoremIpsum({
     min: 4
   }
 });
-const example = lorem.generateParagraphs(3);
+const example = lorem.generateParagraphs(5);
 
 const { Consumer, Provider } = React.createContext()
 
