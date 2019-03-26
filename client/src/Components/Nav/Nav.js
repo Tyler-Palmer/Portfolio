@@ -12,8 +12,9 @@ const Anchor = styled.a`
   ${props =>
     props.selected
       ? css`
-          border-bottom: 2px solid rgba(0,0,0,.35);
+          border-bottom: 2px solid rgba(0,0,0,.25);
           font-weight: bold;
+          transition: 0.4s ease-in-out;
         `
       : null};
 `;
