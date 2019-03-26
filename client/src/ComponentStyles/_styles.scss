@@ -1,0 +1,19 @@
+@import "_base";
+@import "../Components/Nav/nav";
+@import "../Components/Landing/landing";
+@import "../Components/Header/Header";
+
+*{
+    text-decoration: none;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    list-style: none;
+    font-family: "Roboto", sans-serif !important;
+}
+
+.main-wrapper{
+    display: flex;
+}
