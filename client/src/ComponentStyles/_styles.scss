@@ -14,6 +14,7 @@
     font-family: "Roboto", sans-serif !important;
 }
 
-.main-wrapper{
-    display: flex;
+body{
+    display: grid;
+    grid-template-columns: 1fr;
 }
