@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Nav from "./Components/Nav/Nav";
 import Landing from "./Components/Landing/Landing";
+import SplashPage from "./Components/SplashPage/SplashPage"
 
 class App extends Component {
 	constructor(){
@@ -24,6 +25,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <SplashPage />
         <Header />
         <div className="main-wrapper">
           <Nav activeThing2 = {this.state.activeThing2}/>
