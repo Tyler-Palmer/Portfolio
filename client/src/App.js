@@ -4,6 +4,7 @@ import Header from "./Components/Header/Header";
 import Nav from "./Components/Nav/Nav";
 import Landing from "./Components/Landing/Landing";
 import SplashPage from "./Components/SplashPage/SplashPage"
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 
 class App extends Component {
 	constructor(){
