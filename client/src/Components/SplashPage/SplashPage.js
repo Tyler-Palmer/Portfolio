@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Spring, config } from "react-spring/renderprops";
+import { Spring } from "react-spring/renderprops";
 import styled, { css } from "styled-components";
+import { TweenMax } from "gsap";
 
 const SplashLeft = styled.div`
     height: 200vh;
@@ -11,6 +12,17 @@ const SplashLeft = styled.div`
     position: absolute;
 `;
 
+const ArrowWrapper = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin-top: 38vh;
+    z-index: 130;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 const hello = ["H", "E", "L", "L", "O", "."];
 
 class SplashPage extends Component {
@@ -18,20 +30,37 @@ class SplashPage extends Component {
         super();
         this.state = {
             changeColor: false,
-            bool: false
+            show: false,
+            opacity: 0,
+            timer: null
         };
     }
+
+    fadingIn = () => {
+        const timer = setInterval(() => {
+          if (this.state.opacity >= 1) {
+            clearInterval(timer);
+        }
+          this.setState({ opacity: this.state.opacity + 0.1 })
+      }, 100);
+    }
+
     componentDidMount() {
-        setTimeout(() => {
-            this.setState(prevState => ({
-                changeColor: !prevState.changeColor
-            }));
-        }, 3150);
         // setTimeout(() => {
         //     this.setState(prevState => ({
-        //         bool: !prevState.bool
+        //         changeColor: !prevState.changeColor
         //     }));
-        // }, 5900);
+        // }, 3150);
+        setTimeout(() => this.setState({ show: true }, this.fadingIn), 3500)
+
+        this.animateArrow = TweenMax.fromTo(
+            "#arrow",
+            0.95,
+            { y: -20 },
+            { y: 0, repeat: -1, yoyo: true }
+        ).pause();
+        // check out pause(), play(), reverse(), restart() methods \\
+        this.animateArrow.play();
     }
 
     render() {
@@ -44,6 +73,12 @@ class SplashPage extends Component {
                         ))}
                     </div>
                 </div>
+                <ArrowWrapper>
+                    { this.state.show &&
+                   <div id="arrow" style ={{opacity: this.state.opacity}}>
+                   </div>
+                    }
+                </ArrowWrapper>
                 {/* <div className="cube-container">
                     <div className="sk-folding-cube">
                         <div

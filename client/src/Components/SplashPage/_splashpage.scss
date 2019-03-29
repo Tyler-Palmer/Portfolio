@@ -13,7 +13,7 @@
         position: absolute;
 
         .hello {
-            margin-top: 30%;
+            margin-top: 25%;
             margin-left: 10%;
             display: flex;
             justify-content: flex-start;
@@ -72,7 +72,16 @@
             }
         }
     }
-
+    #arrow{
+        background-image: url(./../assets/down-arrow.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 50px;
+        width: 50px;
+        z-index: 130;
+        transition-duration: 1s;
+        -webkit-transition-duration: 1s;
+    }
     // .cube-container {
     //     @include splash-dim;
     //     background: #fdfbfb; /* fallback for old browsers */
