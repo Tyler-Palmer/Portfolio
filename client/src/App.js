@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import Header from "./Components/Header/Header";
 import Nav from "./Components/Nav/Nav";
 import Landing from "./Components/Landing/Landing";
 import SplashPage from "./Components/SplashPage/SplashPage"
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 
 class App extends Component {
 	constructor(){
@@ -25,10 +23,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <SplashPage />
-        <Header />
-        <div className="main-wrapper">
+      <div className="app-wrapper">
+        <SplashPage className="section parallax"/>
           <Nav activeThing2 = {this.state.activeThing2}/>
           <Switch>
             <Route exact path="/" render = { props => <Landing
@@ -37,7 +33,6 @@ class App extends Component {
 															activeThing2 = {this.state.activeThing2}
 															/>} />
           </Switch>
-        </div>
       </div>
     );
   }

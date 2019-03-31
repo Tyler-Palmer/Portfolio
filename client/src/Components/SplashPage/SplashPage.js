@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Spring } from "react-spring/renderprops";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { TweenMax } from "gsap";
 
 const SplashLeft = styled.div`
-    height: 200vh;
+    height: 130vh;
     width: 100vw;
     background-color: #6665dd;
     top: 0;
@@ -16,7 +16,7 @@ const ArrowWrapper = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    margin-top: 38vh;
+    margin-top: 25vh;
     z-index: 130;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@ class SplashPage extends Component {
         };
     }
 
-    fadingIn = () => {
+    fadingInLetters = () => {
         const timer = setInterval(() => {
           if (this.state.opacity >= 1) {
             clearInterval(timer);
@@ -46,17 +46,12 @@ class SplashPage extends Component {
     }
 
     componentDidMount() {
-        // setTimeout(() => {
-        //     this.setState(prevState => ({
-        //         changeColor: !prevState.changeColor
-        //     }));
-        // }, 3150);
-        setTimeout(() => this.setState({ show: true }, this.fadingIn), 3500)
+        setTimeout(() => this.setState({ show: true }, this.fadingInLetters), 100)
 
         this.animateArrow = TweenMax.fromTo(
             "#arrow",
             0.95,
-            { y: -20 },
+            { y: -10 },
             { y: 0, repeat: -1, yoyo: true }
         ).pause();
         // check out pause(), play(), reverse(), restart() methods \\
@@ -68,49 +63,15 @@ class SplashPage extends Component {
             <div className="splash-container">
                 <div className="hello-container">
                     <div className="hello">
-                        {hello.map(each => (
-                            <span className="letters">{each}</span>
+                        {hello.map((each, i) => (
+                            <span className="letters" key={i}>{each}</span>
                         ))}
                     </div>
                 </div>
                 <ArrowWrapper>
-                    { this.state.show &&
-                   <div id="arrow" style ={{opacity: this.state.opacity}}>
+                   <div id="arrow">
                    </div>
-                    }
                 </ArrowWrapper>
-                {/* <div className="cube-container">
-                    <div className="sk-folding-cube">
-                        <div
-                            className={
-                                this.state.changeColor
-                                    ? "sk-cube1 white"
-                                    : "purple sk-cube1"
-                            }
-                        />
-                        <div
-                            className={
-                                this.state.changeColor
-                                    ? "sk-cube2 white"
-                                    : "purple sk-cube2"
-                            }
-                        />
-                        <div
-                            className={
-                                this.state.changeColor
-                                    ? "sk-cube3 white"
-                                    : "purple sk-cube3"
-                            }
-                        />
-                        <div
-                            className={
-                                this.state.changeColor
-                                    ? "sk-cube4 white"
-                                    : "purple sk-cube4"
-                            }
-                        />
-                    </div>
-                </div> */}
                 <Spring
                     from={{ opacity: 0, marginTop: -1000 }}
                     to={{ opacity: 1, marginTop: 0 }}
@@ -118,6 +79,7 @@ class SplashPage extends Component {
                 >
                     {props => <SplashLeft style={props} />}
                 </Spring>
+                
             </div>
         );
     }

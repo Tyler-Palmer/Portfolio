@@ -2,9 +2,10 @@
 
 .splash-container {
     @include splash-dim;
+    position: relative;
 
     .hello-container {
-        height: 100%;
+        height: 25%;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -29,9 +30,9 @@
                 color: white;
                 margin-top: -40px;
                 opacity: 0;
-                animation-delay:3s;
-                animation: 1s cubic-bezier(0.3, 0.25, 0.25, 1.25) forwards fade-in;
-                -webkit-animation-delay:3s;
+                animation-delay:1s;
+                animation: 2s cubic-bezier(0.3, 0.25, 0.25, 1.25) forwards fade-in;
+                -webkit-animation-delay:1s;
                 -webkit-animation: 2s cubic-bezier(0.3, 0.25, 0.25, 1.25) forwards fade-in;
 
             }
@@ -79,8 +80,28 @@
         height: 50px;
         width: 50px;
         z-index: 130;
-        transition-duration: 1s;
-        -webkit-transition-duration: 1s;
+        animation-delay: 1s;
+        animation: 2s linear forwards appear;
+        -webkit-animation-delay: 1s;
+        -webkit-animation: 2s linear forwards appear;
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0
+        } 
+        100% {
+            opacity: 1
+        }
+    }
+
+    @-webkit-keyframes appear {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
     // .cube-container {
     //     @include splash-dim;
