@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { Spring } from "react-spring/renderprops";
 import styled from "styled-components";
 import { TweenMax } from "gsap";
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 
 const SplashLeft = styled.div`
-    height: 130vh;
+    height: 200vh;
     width: 100vw;
     background-color: #6665dd;
     top: 0;
@@ -16,7 +17,7 @@ const ArrowWrapper = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    margin-top: 25vh;
+    margin-top: -15vh;
     z-index: 130;
     display: flex;
     justify-content: center;
@@ -38,15 +39,18 @@ class SplashPage extends Component {
 
     fadingInLetters = () => {
         const timer = setInterval(() => {
-          if (this.state.opacity >= 1) {
-            clearInterval(timer);
-        }
-          this.setState({ opacity: this.state.opacity + 0.1 })
-      }, 100);
-    }
+            if (this.state.opacity >= 1) {
+                clearInterval(timer);
+            }
+            this.setState({ opacity: this.state.opacity + 0.1 });
+        }, 100);
+    };
 
     componentDidMount() {
-        setTimeout(() => this.setState({ show: true }, this.fadingInLetters), 100)
+        setTimeout(
+            () => this.setState({ show: true }, this.fadingInLetters),
+            100
+        );
 
         this.animateArrow = TweenMax.fromTo(
             "#arrow",
@@ -54,32 +58,48 @@ class SplashPage extends Component {
             { y: -10 },
             { y: 0, repeat: -1, yoyo: true }
         ).pause();
-        // check out pause(), play(), reverse(), restart() methods \\
         this.animateArrow.play();
     }
 
     render() {
         return (
-            <div className="splash-container">
-                <div className="hello-container">
-                    <div className="hello">
-                        {hello.map((each, i) => (
-                            <span className="letters" key={i}>{each}</span>
-                        ))}
-                    </div>
-                </div>
-                <ArrowWrapper>
-                   <div id="arrow">
-                   </div>
-                </ArrowWrapper>
-                <Spring
-                    from={{ opacity: 0, marginTop: -1000 }}
-                    to={{ opacity: 1, marginTop: 0 }}
-                    delay="1000"
-                >
-                    {props => <SplashLeft style={props} />}
-                </Spring>
-                
+            <div className="splash-container" onScroll={this.handleScroll}>
+                <Parallax ref={ref => (this.parallax = ref)} pages={2}>
+                    <ParallaxLayer
+                        speed={1}
+                        offset={0}
+                        className="hello-container"
+                    >
+                        <div className="hello">
+                            {hello.map((each, i) => (
+                                <span className="letters" key={i}>
+                                    {each}
+                                </span>
+                            ))}
+                        </div>
+                    </ParallaxLayer>
+                    <ArrowWrapper>
+                        <div
+                            id="arrow"
+                            style={{ opacity: this.state.opacity }}
+                        />
+                    </ArrowWrapper>
+                    <Spring
+                        from={{ opacity: 0, marginTop: -1000 }}
+                        to={{ opacity: 1, marginTop: 0 }}
+                        delay="1000"
+                    >
+                        {props => <SplashLeft style={props} />}
+                    </Spring>
+                    <ParallaxLayer speed={1.5} offset={1}>
+                        <div id="intro-container">
+                            <div id="intro">
+                                <h1>TP Design & Development</h1>
+                                <div id="programming"></div>
+                            </div>
+                        </div>
+                    </ParallaxLayer>
+                </Parallax>
             </div>
         );
     }

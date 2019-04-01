@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="app-wrapper">
-        <SplashPage className="section parallax"/>
+        <SplashPage />
           <Nav activeThing2 = {this.state.activeThing2}/>
           <Switch>
             <Route exact path="/" render = { props => <Landing
