@@ -7,7 +7,8 @@ import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 const SplashLeft = styled.div`
     height: 200vh;
     width: 100vw;
-    background-color: #6665dd;
+    ${'' /* background-color: #6665dd; */}
+    background-color: #321142;
     top: 0;
     left: 0;
     position: absolute;
@@ -95,8 +96,10 @@ class SplashPage extends Component {
                         <div id="intro-container">
                             <div id="intro">
                                 <h1>TP Design & Development</h1>
-                                <div id="programming"></div>
+                                <h3>I'm a developer</h3>
+                                <h5>I like making cool things for the internet, hire me please</h5>
                             </div>
+                            <div id="programming"></div>
                         </div>
                     </ParallaxLayer>
                 </Parallax>
