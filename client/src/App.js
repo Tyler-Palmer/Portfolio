@@ -5,6 +5,8 @@ import Landing from "./Components/Landing/Landing";
 import SplashPage from "./Components/SplashPage/SplashPage";
 import Footer from "./Components/Footer/Footer";
 
+
+
 class App extends Component {
     constructor() {
         super();
@@ -13,7 +15,7 @@ class App extends Component {
                 id: null,
                 ratio: 0
             }
-        };
+		};
     }
 
     updateActive2 = params => {
@@ -21,11 +23,28 @@ class App extends Component {
             activeThing2: params
         });
     };
+	
+	componentDidMount(){
+		const myObs = document.querySelectorAll('.obs')
+
+		this.observer = new IntersectionObserver(entries =>{
+			entries.forEach(entry => {
+				if(entry.IntersectionRatio > 0){
+					console.log('entered view')
+				}else{
+					console.log('out of view')
+				}
+			})
+		})
+		myObs.forEach(each => {
+			this.observer.observe(each)
+		})
+	}
 
     render() {
         return (
             <div className="app-wrapper">
-                <SplashPage />
+                <SplashPage className="obs"/>
                 <Nav activeThing2={this.state.activeThing2} />
                 <Switch>
                     <Route
@@ -36,6 +55,7 @@ class App extends Component {
                                 {...props}
                                 updateActive2={this.updateActive2}
                                 activeThing2={this.state.activeThing2}
+                                className="obs"
                             />
                         )}
                     />

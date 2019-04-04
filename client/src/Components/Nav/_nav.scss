@@ -3,7 +3,6 @@
 .nav-container{
     display: flex;
     justify-content: center;
-    background: rgba(255,255,255,0);
     z-index: 100;
     top: 0;
     width: 100%;
@@ -23,7 +22,6 @@
 
     .navigation{
         margin: 10px 10px 5px 10px;
-        background: rgba(255,255,255,0);
         display: flex;
         flex-direction: row;
         width: 75vw;

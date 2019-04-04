@@ -54,6 +54,7 @@ class Landing extends Component {
         console.log(this.props.things);
         return (
             <div className="landing-wrapper" ref={this.rootRef}>
+
                 {this.props.things.map(thing => (
                     <div
                         id={thing.id}
@@ -63,6 +64,7 @@ class Landing extends Component {
                     >
                         <h1>{thing.headline.toString()}</h1>
                         <p>{thing.text.toString()}</p>
+                        <h3>{thing.bonus}</h3>
                     </div>
                 ))}
             </div>
