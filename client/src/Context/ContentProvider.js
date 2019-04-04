@@ -34,7 +34,7 @@ class ContentProvider extends Component {
                   id: "b",
                   headline: "Tools for the Job",
                   text: "",
-                  sub: "Technologies",
+                  sub: "</>",
                   technologies: [
                       "html",
                       "css",
@@ -43,7 +43,10 @@ class ContentProvider extends Component {
                       "nodejs",
                       "express",
                       "mongodb",
-                      "api"
+                      "api",
+                      "photoshop",
+                      "illustrator",
+                      "indesign"
                   ],
                   sub2: "Tools",
                   tools: [
@@ -60,12 +63,12 @@ class ContentProvider extends Component {
                 
                 {
                     id: "c",
-                    headline: "NodeJS",
-                    text: example
+                    headline: "Projects",
+                    text: ""
                 },
                 {
                     id: "d",
-                    headline: "Express",
+                    headline: "Contact",
                     text: example
                 },
                 {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withContent } from "../../Context/ContentProvider";
+import Contact from "../Contact/Contact"
 
 class Landing extends Component {
     constructor(props) {
@@ -69,6 +70,19 @@ class Landing extends Component {
                                 thing.technologies.map(x => (
                                     <div className={x} />
                                 ))}
+                        </div>
+                        <h3>{thing.sub2 && thing.sub2.toString()}</h3>
+                        <div className="list-container">
+                            <ul>
+                                {thing.tools &&
+                                    thing.tools.map(x => <li>{x}</li>)}
+                            </ul>
+                        </div>
+                        <div className="contact-container">
+                            {
+                                thing.headline === 'Contact' &&
+                                <Contact />
+                            }
                         </div>
                     </div>
                 ))}
