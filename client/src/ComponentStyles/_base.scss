@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Aldrich|Bungee+Hairline|Bungee+Shade|Raleway:900');
+@import url("https://fonts.googleapis.com/css?family=Aldrich|Bungee+Hairline|Bungee+Shade|Raleway:900");
 // $laptop: 1024px;
 // $tablet: 768px;
 // $mobileL: 425px;
@@ -29,6 +29,14 @@
 @mixin splash-dim {
     height: 100vh;
     width: 100vw;
+}
+
+@mixin icon-set {
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 5px;
 }
 
 $bg-cover: cover;

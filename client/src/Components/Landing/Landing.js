@@ -29,13 +29,13 @@ class Landing extends Component {
             );
             const activeThing = Object.values(this.singleRefs).reduce(
                 (acc, val) => (val.ratio > acc.ratio ? val : acc),
-                this.state.activeThing,
+                this.state.activeThing
             );
-            if(activeThing.ratio > this.state.activeThing.ratio){
-              this.setState({
-                activeThing
-              })
-              this.props.updateActive2(this.state.activeThing)
+            if (activeThing.ratio > this.state.activeThing.ratio) {
+                this.setState({
+                    activeThing
+                });
+                this.props.updateActive2(this.state.activeThing);
             }
         };
 
@@ -54,7 +54,6 @@ class Landing extends Component {
         console.log(this.props.things);
         return (
             <div className="landing-wrapper" ref={this.rootRef}>
-
                 {this.props.things.map(thing => (
                     <div
                         id={thing.id}
@@ -64,13 +63,18 @@ class Landing extends Component {
                     >
                         <h1>{thing.headline.toString()}</h1>
                         <p>{thing.text.toString()}</p>
-                        <h3>{thing.bonus}</h3>
+                        <h3>{thing.sub && thing.sub.toString()}</h3>
+                        <div className="icon-container">
+                            {thing.technologies &&
+                                thing.technologies.map(x => (
+                                    <div className={x} />
+                                ))}
+                        </div>
                     </div>
                 ))}
             </div>
         );
     }
 }
-
 
 export default withContent(Landing);

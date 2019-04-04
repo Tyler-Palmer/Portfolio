@@ -24,35 +24,40 @@ class ContentProvider extends Component {
                 {
                     id: "a",
                     headline: "About Me",
-                    text:
-                        "I've worn many hats over the years, the most recent of which is that of web developer. Some of my background includes work for small business, non-profit, consulting, events, high-adventure (bungee jumping), food and beverage, sales, photography, design, soil/mineral science, technical analysis and executive-management. I also am much more than my employment, in my free time I enjoy coding personal projects, learning new technologies, reading, rock climbing, skiing, slacklining, biking, hiking, camping and many more present participles."
+                    text: "I've worn many hats over the years, the most recent of which is that of web developer. Some of my background includes work for small business, non-profit, consulting, events, high-adventure (bungee jumping), food and beverage, sales, photography, design, soil/mineral science, technical analysis and executive-management. I also am much more than my employment, in my free time I enjoy coding personal projects, learning new technologies, reading, rock climbing, skiing, slacklining, biking, hiking, camping and many more present participles.",
+                    sub: "",
+                    technologies: [],
+                    sub2: "",
+                    tools: []
                 },
                 {
-                    id: "b",
-                    headline: "Tools for the Job",
-                    subheadline1: "technologies",
-                    technologies: [
-                        "html",
-                        "css",
-                        "javascript",
-                        "react",
-                        "nodejs",
-                        "express",
-                        "mongodb",
-                        "API"
-                    ],
-                    subheadline2: "Tools",
-                    tools: [
-                    "Github",
-                    "NPM",
-                    "VSCode", 
-                    "SASS",
-                    "Styled Components",
-                    "Bootstrap",
-                    "Libraries",
-                    "Imagination!"
-                  ]
-                },
+                  id: "b",
+                  headline: "Tools for the Job",
+                  text: "",
+                  sub: "Technologies",
+                  technologies: [
+                      "html",
+                      "css",
+                      "javascript",
+                      "react",
+                      "nodejs",
+                      "express",
+                      "mongodb",
+                      "api"
+                  ],
+                  sub2: "Tools",
+                  tools: [
+                  "Github",
+                  "NPM",
+                  "VSCode", 
+                  "SASS",
+                  "Styled Components",
+                  "Bootstrap",
+                  "Libraries",
+                  "Imagination!"
+                ]
+              },
+                
                 {
                     id: "c",
                     headline: "NodeJS",

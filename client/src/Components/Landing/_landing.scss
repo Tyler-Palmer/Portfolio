@@ -22,5 +22,46 @@
             p{
                 font-size: 8px;
             }
+
+            .icon-container{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                .html{
+                    @include icon-set;
+                    background-image: url('https://cdn.svgporn.com/logos/html-5.svg');  
+                }
+                .css{
+                    @include icon-set;
+                    background-image: url('https://cdn.svgporn.com/logos/css-3.svg')
+                }
+                .javascript{
+                    @include icon-set;
+                    background-image: url('https://cdn.svgporn.com/logos/javascript.svg')
+                }
+                .react{
+                    @include icon-set;
+                    background-image: url('https://cdn.svgporn.com/logos/react.svg')
+                }
+                .nodejs{
+                    @include icon-set;
+                    background-image: url('https://cdn.svgporn.com/logos/nodejs.svg')
+                }
+                .express{
+                    @include icon-set;
+                    background-image: url('https://cdn.svgporn.com/logos/express.svg')
+                }
+                .mongodb{
+                    @include icon-set;
+                    background-image: url('https://cdn.svgporn.com/logos/mongodb.svg')
+                }
+                .api{
+                    @include icon-set;
+                    background-image: url('https://png2.kisspng.com/sh/0167b576ca5b57c6d4b46c3d0e9388b9/L0KzQYm3WMA5N6pweZH0aYP2gLBuTfxwb5CyeeJ5bHnmccXwjB4ueKN0fARqbX3sfri0if51baNredVuLXPyfcH8lPVzNaF3RelxYYSwfbLyhgMuOWE1SKI2Y4X2hLF0hgJ0NZ1ug9c2aXbvibTvggQucZdxkdVxYT24cofpUfMzbZY4fqoAND65SIi3V8YxO2I6S6UCNEa1QoOCU8M5NqFzf3==/kisspng-logo-application-programming-interface-computer-pr-what-makes-10000-customers-like-iflychat-iflycha-5b6b1c2ee3f854.6870760315337462229338.png')
+                }
+            }
         }
 }
