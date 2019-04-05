@@ -30,10 +30,10 @@
                 color: white;
                 margin-top: -40px;
                 opacity: 0;
-                animation-delay: 1s;
+                animation-delay: 1.5s;
                 animation: 2s cubic-bezier(0.3, 0.25, 0.25, 1.25) forwards
                     fade-in;
-                -webkit-animation-delay: 1s;
+                -webkit-animation-delay: 1.5s;
                 -webkit-animation: 2s cubic-bezier(0.3, 0.25, 0.25, 1.25)
                     forwards fade-in;
             }

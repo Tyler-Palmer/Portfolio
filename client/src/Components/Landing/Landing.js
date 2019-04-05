@@ -71,19 +71,24 @@ class Landing extends Component {
                             <div className="icon-container">
                                 {thing.technologies &&
                                     thing.technologies.map(x => (
-                                        <div className={x} />
+                                        <div className={x} key={x} />
                                     ))}
                             </div>
                             <h3>{thing.sub2 && thing.sub2.toString()}</h3>
                             <div className="list-container">
                                 <ul>
                                     {thing.tools &&
-                                        thing.tools.map(x => <li>{x}</li>)}
+                                        thing.tools.map(x => <li key={x}>{x}</li>)}
                                 </ul>
                             </div>
                             <div className="contact-container">
                                 {thing.headline === "Contact" && (
-                                    <Link to="/contact">Contact</Link>
+                                    <Link
+                                        onClick={this.props.hideSplash}
+                                        to="/contact"
+                                    >
+                                        Contact
+                                    </Link>
                                 )}
                             </div>
                         </div>

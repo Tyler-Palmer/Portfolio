@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import Nav from "./Components/Nav/Nav";
 import Landing from "./Components/Landing/Landing";
@@ -15,7 +15,8 @@ class App extends Component {
             activeThing2: {
                 id: null,
                 ratio: 0
-            }
+			},
+			showSplash: true
 		};
     }
 
@@ -23,7 +24,13 @@ class App extends Component {
         this.setState({
             activeThing2: params
         });
-    };
+	};
+	
+	hideSplash = () => {
+		this.setState( prevState => ({
+			showSplash: !prevState.showSplash
+		}))
+	}
 	
 	componentDidMount(){
 		const myObs = document.querySelectorAll('.obs')
@@ -43,10 +50,15 @@ class App extends Component {
 	}
 
     render() {
+		console.log(this.state)
         return (
             <div className="app-wrapper">
+				{this.state.showSplash &&
+				<Fragment>
                 <SplashPage className="obs"/>
                 <Nav activeThing2={this.state.activeThing2} />
+				</Fragment>
+				}
                 <Switch>
                     <Route
                         exact
@@ -56,6 +68,7 @@ class App extends Component {
                                 {...props}
                                 updateActive2={this.updateActive2}
                                 activeThing2={this.state.activeThing2}
+								hideSplash={this.hideSplash}
                                 className="obs"
                             />
                         )}

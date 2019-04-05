@@ -7,7 +7,7 @@ import delay from "delay";
 
 const Sidebar = Keyframes.Spring({
     // Slots can take arrays/chains,
-    // peek: [{ x: 0, from: { x: -100 }, delay: 500 }, { x: -100, delay: 800 }],
+    peek: [{ x: 0, from: { x: -100 }, delay: 500 }],
     // // single items,
     open: { delay: 0, x: 0 },
     // or async functions with side-effects
@@ -18,10 +18,10 @@ const Sidebar = Keyframes.Spring({
 });
 
 const Content = Keyframes.Trail({
-    // peek: [
-    //     { x: 0, opacity: 1, from: { x: -100, opacity: 0 }, delay: 600 },
-    //     { x: -100, opacity: 0, delay: 0 }
-    // ],
+    peek: [
+        { x: 0, opacity: 1, from: { x: -100, opacity: 0 }, delay: 600 }
+        // { x: -100, opacity: 0, delay: 0 }
+    ],
     open: { x: 0, opacity: 1, delay: 100 },
     close: { x: -100, opacity: 0, delay: 0 }
 });
@@ -32,27 +32,31 @@ const items = [
     <Avatar src="https://semantic-ui.com/images/avatar2/large/elyse.png" />,
     <Input
         size="small"
-        prefix={<FontAwesomeIcon className="user" icon="user" />}
+        prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
         placeholder="Name"
     />,
     <Input
         size="small"
-        prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
+        prefix={<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />}
         placeholder="Email"
     />,
     <Input
         size="small"
-        prefix={<Icon type="environment" style={{ color: 'rgba(0,0,0,.25)' }} />}
+        prefix={
+            <Icon type="environment" style={{ color: "rgba(0,0,0,.25)" }} />
+        }
         placeholder="Location"
     />,
     <Input
         size="small"
-        prefix={<Icon type="shopping-cart" style={{ color: 'rgba(0,0,0,.25)' }} />}
+        prefix={
+            <Icon type="shopping-cart" style={{ color: "rgba(0,0,0,.25)" }} />
+        }
         placeholder="Project/Budget"
     />,
     <TextArea
         rows={4}
-        prefix={<Icon type="smile-o" style={{ color: 'rgba(0,0,0,.25)' }} />}
+        prefix={<Icon type="smile-o" style={{ color: "rgba(0,0,0,.25)" }} />}
         placeholder="Comments/Suggestions"
     />,
     <Button
@@ -89,14 +93,16 @@ class Contact extends Component {
         return (
             <div
                 style={{
-                    width: "100%",
-                    height: "100%"
+                    width: "100vw",
+                    height: "100vh",
+                    backgroundColor: "#321142",
                 }}
             >
                 <Icon
                     type={`menu-${icon}`}
                     className="sidebar-toggle"
                     onClick={this.toggle}
+                    style={{marginTop: '5vh'}}
                 />
                 <Sidebar native state={state}>
                     {({ x }) => (

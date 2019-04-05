@@ -50,7 +50,7 @@ class SplashPage extends Component {
     componentDidMount() {
         setTimeout(
             () => this.setState({ show: true }, this.fadingInLetters),
-            800
+            100
         );
 
         this.animateArrow = TweenMax.fromTo(
