@@ -3,6 +3,8 @@ import { Spring } from "react-spring/renderprops";
 import styled from "styled-components";
 import { TweenMax } from "gsap";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
+import { Icon } from "antd";
+import { NavLink } from "react-router-dom";
 
 const SplashLeft = styled.div`
     height: 200vh;
@@ -23,6 +25,15 @@ const ArrowWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+const StyledLink = styled(NavLink)`
+    text-decoration: none;
+    transition: ease-in-out;
+    color: white;
+    font-size: 1.5em;
+    font-family: "Lato", sans-serif;
+    z-index: 130;
 `;
 
 const hello = ["H", "E", "L", "L", "O", "."];
@@ -50,7 +61,7 @@ class SplashPage extends Component {
     componentDidMount() {
         setTimeout(
             () => this.setState({ show: true }, this.fadingInLetters),
-            100
+            500
         );
 
         this.animateArrow = TweenMax.fromTo(
@@ -103,6 +114,12 @@ class SplashPage extends Component {
                                     beautiful tools for the web
                                 </h5>
                             </div>
+
+                            <div className="enter-container">
+                                <Icon type="rocket" className="rocket" />
+                                <NavLink to="/landing">Enter</NavLink>
+                            </div>
+
                             <div id="programming" />
                         </div>
                     </ParallaxLayer>

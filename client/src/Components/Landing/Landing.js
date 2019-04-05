@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 import { withContent } from "../../Context/ContentProvider";
 import Contact from "../Contact/Contact"
 
@@ -81,7 +82,7 @@ class Landing extends Component {
                         <div className="contact-container">
                             {
                                 thing.headline === 'Contact' &&
-                                <Contact />
+                                <Link to="/contact">Contact</Link>
                             }
                         </div>
                     </div>
