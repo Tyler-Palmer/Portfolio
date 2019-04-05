@@ -6,6 +6,8 @@ import SplashPage from "./Components/SplashPage/SplashPage";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 
+
+
 class App extends Component {
     constructor() {
         super();
@@ -14,7 +16,7 @@ class App extends Component {
                 id: null,
                 ratio: 0
             }
-        };
+		};
     }
 
     updateActive2 = params => {
@@ -22,38 +24,33 @@ class App extends Component {
             activeThing2: params
         });
     };
+	
+	componentDidMount(){
+		const myObs = document.querySelectorAll('.obs')
 
-    componentDidMount() {
-        const myObs = document.querySelectorAll(".obs");
-
-        this.observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.IntersectionRatio > 0) {
-                    console.log("entered view");
-                } else {
-                    console.log("out of view");
-                }
-            });
-        });
-        myObs.forEach(each => {
-            this.observer.observe(each);
-        });
-    }
+		this.observer = new IntersectionObserver(entries =>{
+			entries.forEach(entry => {
+				if(entry.IntersectionRatio > 0){
+					console.log('entered view')
+				}else{
+					console.log('out of view')
+				}
+			})
+		})
+		myObs.forEach(each => {
+			this.observer.observe(each)
+		})
+	}
 
     render() {
         return (
             <div className="app-wrapper">
+                <SplashPage className="obs"/>
+                <Nav activeThing2={this.state.activeThing2} />
                 <Switch>
                     <Route
                         exact
                         path="/"
-                        render={props => (
-                            <SplashPage {...props} className="obs" />
-                        )}
-                    />
-                    <Nav activeThing2={this.state.activeThing2} />
-                    <Route
-                        path="/landing"
                         render={props => (
                             <Landing
                                 {...props}
@@ -63,9 +60,10 @@ class App extends Component {
                             />
                         )}
                     />
-                    <Route path="/contact" component={Contact} />
-					<Footer />
+					<Route 	path ="/Contact"
+							component={Contact} />
                 </Switch>
+                <Footer />
             </div>
         );
     }

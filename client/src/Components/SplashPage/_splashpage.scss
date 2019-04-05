@@ -141,7 +141,7 @@
                 font-family: "Roboto", sans-serif !important;
                 font-size: 2em;
                 font-weight: 700;
-                margin-top: 5px;
+                margin-top: 10px;
                 margin-bottom: 0px;
                 z-index: 120;
                 display: block;
@@ -153,24 +153,8 @@
                 font-weight: light;
                 font-size: 1.3em;
                 margin-top: 5px;
-                line-height: 1.6em;
+                line-height: 1.8em;
                 display: block;
-                color: white;
-            }
-        }
-
-        .enter-container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 130;
-            margin-top: 20vh;
-            height: auto;
-
-            .rocket{
-                display: block;
-                font-size: 3em;
                 color: white;
             }
         }
@@ -180,9 +164,8 @@
             background-repeat: no-repeat;
             background-size: cover;
             height: 50vh;
-            width: 100vw;
-            position: absolute;
-            margin-top: 28vh;
+            width: 100% !important;
+            margin-top: 50vh;
             margin-bottom: 2px;
             padding: 0;
             z-index: 100;

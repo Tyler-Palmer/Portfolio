@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link } from 'react-router-dom'
+import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 import { withContent } from "../../Context/ContentProvider";
-import Contact from "../Contact/Contact"
+import Nav from "../Nav/Nav";
 
 class Landing extends Component {
     constructor(props) {
@@ -55,39 +55,41 @@ class Landing extends Component {
     render() {
         console.log(this.props.things);
         return (
-            <div className="landing-wrapper" ref={this.rootRef}>
-                {this.props.things.map(thing => (
-                    <div
-                        id={thing.id}
-                        key={thing.id}
-                        className="text-card"
-                        ref={this.singleRefs[thing.id].ref}
-                    >
-                        <h1>{thing.headline.toString()}</h1>
-                        <p>{thing.text.toString()}</p>
-                        <h3>{thing.sub && thing.sub.toString()}</h3>
-                        <div className="icon-container">
-                            {thing.technologies &&
-                                thing.technologies.map(x => (
-                                    <div className={x} />
-                                ))}
+            <Fragment>
+                {/* <Nav activeThing={this.state.activeThing} /> */}
+                <div className="landing-wrapper" ref={this.rootRef}>
+                    {this.props.things.map(thing => (
+                        <div
+                            id={thing.id}
+                            key={thing.id}
+                            className="text-card"
+                            ref={this.singleRefs[thing.id].ref}
+                        >
+                            <h1>{thing.headline.toString()}</h1>
+                            <p>{thing.text.toString()}</p>
+                            <h3>{thing.sub && thing.sub.toString()}</h3>
+                            <div className="icon-container">
+                                {thing.technologies &&
+                                    thing.technologies.map(x => (
+                                        <div className={x} />
+                                    ))}
+                            </div>
+                            <h3>{thing.sub2 && thing.sub2.toString()}</h3>
+                            <div className="list-container">
+                                <ul>
+                                    {thing.tools &&
+                                        thing.tools.map(x => <li>{x}</li>)}
+                                </ul>
+                            </div>
+                            <div className="contact-container">
+                                {thing.headline === "Contact" && (
+                                    <Link to="/contact">Contact</Link>
+                                )}
+                            </div>
                         </div>
-                        <h3>{thing.sub2 && thing.sub2.toString()}</h3>
-                        <div className="list-container">
-                            <ul>
-                                {thing.tools &&
-                                    thing.tools.map(x => <li>{x}</li>)}
-                            </ul>
-                        </div>
-                        <div className="contact-container">
-                            {
-                                thing.headline === 'Contact' &&
-                                <Link to="/contact">Contact</Link>
-                            }
-                        </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            </Fragment>
         );
     }
 }
