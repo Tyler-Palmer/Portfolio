@@ -27,7 +27,8 @@ class Contact extends Component{
             email: "",
             location: "",
             project: "",
-            comment: ""
+            comment: "",
+            sent: false
         })
     }
 
@@ -40,8 +41,12 @@ class Contact extends Component{
             project: this.state.project,
             comment: this.state.comment
         }
-
         console.log(data)
+        axios.post('API_URI', data).then(res => {
+            this.setState({
+                sent: true
+            }).then(this.clearInputs(), console.log('sent!'))
+        }).catch(() => console.log('Message not sent'))
         
     }
 
