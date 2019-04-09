@@ -24,7 +24,7 @@ class ContentProvider extends Component {
                 {
                     id: "a",
                     headline: "About Me",
-                    text: "I've worn many hats over the years, the most recent of which is that of web developer. Some of my background includes work for small business, non-profit, consulting, events, high-adventure (bungee jumping), food and beverage, sales, photography, design, soil/mineral science, technical analysis and executive-management. I also am much more than my employment, in my free time I enjoy coding personal projects, learning new technologies, reading, rock climbing, skiing, slacklining, biking, hiking, camping and many more present participles.",
+                    text: "I've worn many hats over the years, the most recent of which is that of web developer. Some of my background includes work for small business, non-profit, consulting, high-adventure (bungee jumping), events, food and beverage, sales, photography, design, soil/mineral science, technical analysis and executive-management. I also am much more than my employment, in my free time I enjoy coding personal projects, learning new technologies, reading, rock climbing, skiing, slacklining, biking, hiking, camping and many more present participles. My greatest driving force in life is to leave a positive impact and to excel at what I do and do many things",
                     sub: "",
                     technologies: [],
                     sub2: "",
@@ -50,14 +50,12 @@ class ContentProvider extends Component {
                       "illustrator",
                       "indesign"
                   ],
-                  sub2: "Tools",
+                  sub2: "Additional tools",
                   tools: [
                   "Github",
                   "NPM",
                   "VSCode", 
-                  "SASS",
                   "Styled Components",
-                  "Bootstrap",
                   "Libraries",
                   "Imagination!"
                 ]
@@ -129,7 +127,7 @@ class ContentProvider extends Component {
                 {
                     id: "d",
                     headline: "Contact",
-                    text: example
+                    text: "I would love to connect, drop me a line on the contact form or reach out via any of the channels below. This website was written in React"
                 },
                 {
                     id: "e",

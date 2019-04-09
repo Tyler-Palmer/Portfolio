@@ -53,7 +53,6 @@ class Landing extends Component {
     }
 
     render() {
-        console.log(this.props.things);
         return (
             <Fragment>
                 {/* <Nav activeThing={this.state.activeThing} /> */}
