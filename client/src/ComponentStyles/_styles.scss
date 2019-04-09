@@ -1,8 +1,11 @@
 @import "_base";
 @import "../Components/Nav/nav";
 @import "../Components/Landing/landing";
-@import "../Components/Header/Header";
-@import "../Components/SplashPage/SplashPage";
+@import "../Components/Header/header";
+@import "../Components/SplashPage/splashpage";
+@import "../Components/Footer/footer";
+@import "../Components/Contact/contact";
+@import "../Components/ContactForm/contactform";
 
 *{
     text-decoration: none;

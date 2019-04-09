@@ -1,5 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 import { withContent } from "../../Context/ContentProvider";
+import Nav from "../Nav/Nav";
 
 class Landing extends Component {
     constructor(props) {
@@ -29,13 +31,13 @@ class Landing extends Component {
             );
             const activeThing = Object.values(this.singleRefs).reduce(
                 (acc, val) => (val.ratio > acc.ratio ? val : acc),
-                this.state.activeThing,
+                this.state.activeThing
             );
-            if(activeThing.ratio > this.state.activeThing.ratio){
-              this.setState({
-                activeThing
-              })
-              this.props.updateActive2(this.state.activeThing)
+            if (activeThing.ratio > this.state.activeThing.ratio) {
+                this.setState({
+                    activeThing
+                });
+                this.props.updateActive2(this.state.activeThing);
             }
         };
 
@@ -53,22 +55,48 @@ class Landing extends Component {
     render() {
         console.log(this.props.things);
         return (
-            <div className="landing-wrapper" ref={this.rootRef}>
-                {this.props.things.map(thing => (
-                    <div
-                        id={thing.id}
-                        key={thing.id}
-                        className="text-card"
-                        ref={this.singleRefs[thing.id].ref}
-                    >
-                        <h1>{thing.headline.toString()}</h1>
-                        <p>{thing.text.toString()}</p>
-                    </div>
-                ))}
-            </div>
+            <Fragment>
+                {/* <Nav activeThing={this.state.activeThing} /> */}
+                <div className="landing-wrapper" ref={this.rootRef}>
+                    {this.props.things.map(thing => (
+                        <div
+                            id={thing.id}
+                            key={thing.id}
+                            className="text-card"
+                            ref={this.singleRefs[thing.id].ref}
+                        >
+                            <h1>{thing.headline.toString()}</h1>
+                            <p>{thing.text.toString()}</p>
+                            <h3>{thing.sub && thing.sub.toString()}</h3>
+                            <div className="icon-container">
+                                {thing.technologies &&
+                                    thing.technologies.map(x => (
+                                        <div className={x} key={x} />
+                                    ))}
+                            </div>
+                            <h3>{thing.sub2 && thing.sub2.toString()}</h3>
+                            <div className="list-container">
+                                <ul>
+                                    {thing.tools &&
+                                        thing.tools.map(x => <li key={x}>{x}</li>)}
+                                </ul>
+                            </div>
+                            <div className="contact-container">
+                                {thing.headline === "Contact" && (
+                                    <Link
+                                        onClick={this.props.hideSplash}
+                                        to="/contact"
+                                    >
+                                        Contact
+                                    </Link>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </Fragment>
         );
     }
 }
-
 
 export default withContent(Landing);

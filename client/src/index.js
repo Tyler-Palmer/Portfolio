@@ -32,7 +32,12 @@ import {
   faWalking,
   faSubway,
   faBus,
-  faBicycle
+  faBicycle,
+  faPaperPlane,
+  faUser,
+  faMapMarkerAlt,
+  faDollarSign,
+  faComments
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   fab,
@@ -61,7 +66,12 @@ library.add(
   faWalking,
   faSubway,
   faBus,
-  faBicycle
+  faBicycle,
+  faPaperPlane,
+  faUser,
+  faMapMarkerAlt,
+  faDollarSign,
+  faComments
 );
 
 ReactDOM.render(

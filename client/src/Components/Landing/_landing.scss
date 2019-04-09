@@ -1,28 +1,139 @@
 @import "../ComponentStyles/base";
 
-.landing-wrapper{
-    background: #FDFBFB;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FDFBFB, #EBEDEE);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right,  #FDFBFB, #EBEDEE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    // margin-top: 25px;
+.landing-wrapper {
+    background: #fdfbfb; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #fdfbfb,
+        #ebedee
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #fdfbfb,
+        #ebedee
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 20px 15px 0 5px;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    overflow-y: scroll;
     display: flex;
     flex-direction: column;
 
-        .text-card{
-            height: 100%;
-            width: 100%;
-            margin: 0 0 20px 0px;
-            padding: 0 15px 0 10px;
+    #a {
+        p {
+            font-size: 1em;
+            line-height: 1.3em;
+            margin-left: 5%;
+        }
+    }
 
-            h1{
-                margin: 0 0 10px 0;
-            }
-            p{
-                font-size: 8px;
+    #b {
+        .icon-container {
+            margin-top: 10px;
+        }
+
+        h3 {
+            margin-left: 5%;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+        h3:first-of-type{
+            font-family: "Montserrat", sans-serif !important;
+            font-size: 3em;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+        }
+
+        .list-container {
+            margin-left: 10%;
+            margin-top: 15px;
+
+            ul {
+                padding-left: 20px;
+
+                li {
+                    list-style-type: circle;
+                    margin-top: 5px;
+                }
             }
         }
+    }
+    .text-card {
+        height: 100%;
+        width: 100%;
+        margin: 0 0 20px 0px;
+        padding: 0 15px 0 10px;
+
+        h1 {
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
+        h3 {
+            text-align: center;
+        }
+        p {
+            font-size: 8px;
+        }
+
+        .icon-container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .html {
+                @include icon-set;
+                background-image: url("https://cdn.svgporn.com/logos/html-5.svg");
+            }
+            .css {
+                @include icon-set;
+                background-image: url("https://cdn.svgporn.com/logos/css-3.svg");
+            }
+            .sass {
+                @include icon-set;
+                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/512px-Sass_Logo_Color.svg.png")
+            }
+            .javascript {
+                @include icon-set;
+                background-image: url("https://cdn.svgporn.com/logos/javascript.svg");
+            }
+            .react {
+                @include icon-set;
+                background-image: url("https://cdn.svgporn.com/logos/react.svg");
+            }
+            .nodejs {
+                @include icon-set;
+                background-image: url("https://cdn.svgporn.com/logos/nodejs.svg");
+            }
+            .express {
+                @include icon-set;
+                background-image: url("https://cdn.svgporn.com/logos/express.svg");
+            }
+            .mongodb {
+                @include icon-set;
+                background-image: url("https://cdn.svgporn.com/logos/mongodb.svg");
+            }
+            .api {
+                @include icon-set;
+                background-image: url("https://png2.kisspng.com/sh/0167b576ca5b57c6d4b46c3d0e9388b9/L0KzQYm3WMA5N6pweZH0aYP2gLBuTfxwb5CyeeJ5bHnmccXwjB4ueKN0fARqbX3sfri0if51baNredVuLXPyfcH8lPVzNaF3RelxYYSwfbLyhgMuOWE1SKI2Y4X2hLF0hgJ0NZ1ug9c2aXbvibTvggQucZdxkdVxYT24cofpUfMzbZY4fqoAND65SIi3V8YxO2I6S6UCNEa1QoOCU8M5NqFzf3==/kisspng-logo-application-programming-interface-computer-pr-what-makes-10000-customers-like-iflychat-iflycha-5b6b1c2ee3f854.6870760315337462229338.png");
+            }
+            .bootstrap {
+                @include icon-set;
+                background-image: url("http://pluspng.com/img-png/bootstrap-png-bootstrap-1024.png")
+            }
+            .photoshop {
+                @include icon-set;
+                background-image: url("http://pluspng.com/img-png/photoshop-logo-png-open-2000.png");
+            }
+            .illustrator {
+                @include icon-set;
+                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/512px-Adobe_Illustrator_CC_icon.svg.png");
+            }
+            .indesign {
+                @include icon-set;
+                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Adobe_InDesign_CC_icon.svg/512px-Adobe_InDesign_CC_icon.svg.png");
+            }
+        }
+    }
 }

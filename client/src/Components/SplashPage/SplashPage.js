@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Spring } from "react-spring/renderprops";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { TweenMax } from "gsap";
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 
 const SplashLeft = styled.div`
     height: 200vh;
     width: 100vw;
-    background-color: #6665dd;
+    ${"" /* background-color: #6665dd; */}
+    background-color: #321142;
     top: 0;
     left: 0;
     position: absolute;
@@ -16,7 +18,7 @@ const ArrowWrapper = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    margin-top: 38vh;
+    margin-top: -15vh;
     z-index: 130;
     display: flex;
     justify-content: center;
@@ -36,88 +38,75 @@ class SplashPage extends Component {
         };
     }
 
-    fadingIn = () => {
+    fadingInLetters = () => {
         const timer = setInterval(() => {
-          if (this.state.opacity >= 1) {
-            clearInterval(timer);
-        }
-          this.setState({ opacity: this.state.opacity + 0.1 })
-      }, 100);
-    }
+            if (this.state.opacity >= 1) {
+                clearInterval(timer);
+            }
+            this.setState({ opacity: this.state.opacity + 0.1 });
+        }, 100);
+    };
 
     componentDidMount() {
-        // setTimeout(() => {
-        //     this.setState(prevState => ({
-        //         changeColor: !prevState.changeColor
-        //     }));
-        // }, 3150);
-        setTimeout(() => this.setState({ show: true }, this.fadingIn), 3500)
+        setTimeout(
+            () => this.setState({ show: true }, this.fadingInLetters),
+            100
+        );
 
         this.animateArrow = TweenMax.fromTo(
             "#arrow",
             0.95,
-            { y: -20 },
+            { y: -10 },
             { y: 0, repeat: -1, yoyo: true }
         ).pause();
-        // check out pause(), play(), reverse(), restart() methods \\
         this.animateArrow.play();
     }
 
     render() {
         return (
-            <div className="splash-container">
-                <div className="hello-container">
-                    <div className="hello">
-                        {hello.map(each => (
-                            <span className="letters">{each}</span>
-                        ))}
-                    </div>
-                </div>
-                <ArrowWrapper>
-                    { this.state.show &&
-                   <div id="arrow" style ={{opacity: this.state.opacity}}>
-                   </div>
-                    }
-                </ArrowWrapper>
-                {/* <div className="cube-container">
-                    <div className="sk-folding-cube">
+            <div className="splash-container" onScroll={this.handleScroll}>
+                <Parallax ref={ref => (this.parallax = ref)} pages={2}>
+                    <ParallaxLayer
+                        speed={1}
+                        offset={0}
+                        className="hello-container"
+                    >
+                        <div className="hello">
+                            {hello.map((each, i) => (
+                                <span className="letters" key={i}>
+                                    {each}
+                                </span>
+                            ))}
+                        </div>
+                    </ParallaxLayer>
+                    <ArrowWrapper>
                         <div
-                            className={
-                                this.state.changeColor
-                                    ? "sk-cube1 white"
-                                    : "purple sk-cube1"
-                            }
+                            id="arrow"
+                            style={{ opacity: this.state.opacity }}
                         />
-                        <div
-                            className={
-                                this.state.changeColor
-                                    ? "sk-cube2 white"
-                                    : "purple sk-cube2"
-                            }
-                        />
-                        <div
-                            className={
-                                this.state.changeColor
-                                    ? "sk-cube3 white"
-                                    : "purple sk-cube3"
-                            }
-                        />
-                        <div
-                            className={
-                                this.state.changeColor
-                                    ? "sk-cube4 white"
-                                    : "purple sk-cube4"
-                            }
-                        />
-                    </div>
-                </div> */}
-                <Spring
-                    from={{ opacity: 0, marginTop: -1000 }}
-                    to={{ opacity: 1, marginTop: 0 }}
-                    delay="1000"
-                >
-                    {props => <SplashLeft style={props} />}
-                </Spring>
+                    </ArrowWrapper>
+                    <Spring
+                        from={{ opacity: 0, marginTop: -1000 }}
+                        to={{ opacity: 1, marginTop: 0 }}
+                        delay="1000"
+                    >
+                        {props => <SplashLeft style={props} />}
+                    </Spring>
+                    <ParallaxLayer speed={1.5} offset={1}>
+                        <div id="intro-container">
+                            <div id="intro">
+                                <h1>TP Design & Development</h1>
+                                <h3>I'm a developer</h3>
+                                <h5>
+                                    I enjoy learning new skills and challenging
+                                    myself to create interesting, useful and
+                                    beautiful tools for the web
+                                </h5>
+                            </div>
+                            <div id="programming" />
+                        </div>
+                    </ParallaxLayer>
+                </Parallax>
             </div>
         );
     }
