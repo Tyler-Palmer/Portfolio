@@ -1,25 +1,25 @@
-import React, { Component, Fragment } from 'react'
-import ContactForm from '../ContactForm/ContactForm'
-import axios from 'axios'
+import React, { Component, Fragment } from "react";
+import ContactForm from "../ContactForm/ContactForm";
+import axios from "axios";
 
-class Contact extends Component{
-    constructor(){
-        super()
-        this.state ={
+class Contact extends Component {
+    constructor() {
+        super();
+        this.state = {
             name: "",
             email: "",
             location: "",
             project: "",
             comment: "",
             sent: false
-        }
+        };
     }
 
-    handleChange = (e) => {
+    handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
-        })
-    }
+        });
+    };
 
     clearInputs = () => {
         this.setState({
@@ -27,34 +27,35 @@ class Contact extends Component{
             email: "",
             location: "",
             project: "",
-            comment: "",
-            sent: false
-        })
-    }
+            comment: ""
+        });
+    };
 
-    handleSubmit = (e) => {
-        e.preventDefault()
-        const data ={
+    handleSubmit = async e => {
+        e.preventDefault();
+        const data = {
             name1: this.state.name1,
             email: this.state.email,
             location: this.state.location,
             project: this.state.project,
             comment: this.state.comment
-        }
-        // console.log(data)
-        axios.post('/api/form', data).then(res => {
-            this.setState({
-                sent: true
-            }).then(this.clearInputs(), console.log('Message successfully sent!'))
-        }).catch(() => console.log('Message not sent'))
-        
-    }
+        };
+        await axios
+            .post("/api/form", data)
+            .then(
+                this.setState( prevState => ({
+                    sent: !prevState.sent
+                }))
+            )
+            .then(this.clearInputs(), console.log("Message successfully sent!"))
+            .catch(() => console.log("Message not sent"));
+    };
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="form-wrapper">
-                <ContactForm 
-                    handleChange = {this.handleChange}
+                <ContactForm
+                    handleChange={this.handleChange}
                     name1={this.state.name1}
                     email={this.state.email}
                     location={this.state.location}
@@ -63,8 +64,8 @@ class Contact extends Component{
                     handleSubmit={this.handleSubmit}
                 />
             </div>
-        )
+        );
     }
 }
 
-export default Contact
+export default Contact;

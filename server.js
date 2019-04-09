@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 const mg = require('nodemailer-mailgun-transport')
 
 require("dotenv").config();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 6000;
 const app = express();
 
 //Middleware
@@ -60,5 +60,5 @@ app.use((err, req, res, next) => {
 
 //
 app.listen(PORT, () => {
-    console.log(`server is running on port ${PORT}`);
+    console.log(`server is running on port: ${PORT}`);
 });
