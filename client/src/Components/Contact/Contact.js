@@ -34,18 +34,18 @@ class Contact extends Component{
 
     handleSubmit = (e) => {
         e.preventDefault()
-        let data ={
-            name: this.state.name1,
+        const data ={
+            name1: this.state.name1,
             email: this.state.email,
             location: this.state.location,
             project: this.state.project,
             comment: this.state.comment
         }
-        console.log(data)
-        axios.post('API_URI', data).then(res => {
+        // console.log(data)
+        axios.post('/api/form', data).then(res => {
             this.setState({
                 sent: true
-            }).then(this.clearInputs(), console.log('sent!'))
+            }).then(this.clearInputs(), console.log('Message successfully sent!'))
         }).catch(() => console.log('Message not sent'))
         
     }

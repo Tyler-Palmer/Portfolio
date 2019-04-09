@@ -1,52 +1,64 @@
 const express = require("express");
 const morgan = require("morgan");
-const cors = require("cors")
-const nodemailer = require("nodemailer")
-require("dotenv").config();
-const app = express();
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
+const mg = require('nodemailer-mailgun-transport')
 
+require("dotenv").config();
+const PORT = process.env.PORT || 3001;
+const app = express();
 
 //Middleware
 app.use(morgan("dev"));
-app.use(express.json());
-app.use(cors())
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post("/api/v1", (req, res) => {
+//Mailgun Info
+
+const mailgunAuth = {
+    auth: {
+      api_key: process.env.MAILGUN_API_KEY,
+      domain: process.env.MAILGUN_DOMAIN,
+    }
+  }
+
+app.post("/api/form", (req, res, next) => {
+    console.log(req.body);
     const data = req.body;
 
-    const smtpTransport = nodemailer.createTransport({
-        service: "Gmail",
-        port: 465,
-        auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD
-        }
-    });
+    let nodemailerMailGun = nodemailer.createTransport(mg(mailgunAuth))
 
-    const mailOptions = {
-        from: data.email,
+    let mailOptions = {
+        from: '"Nodemailer Contact" <tyler.william.palmer@gmail.com>',
         to: process.env.EMAIL,
-        subject: "|| NEW EMAIL FROM PORTFOLIO CONTACT FORM||",
-        html: `<p>${data.name1}</p>
-            <p>${data.email}</p>
-            <p>${data.message}</p>
-            <p>${data.location}</p>
-            <p>${data.project}</p>
-            <p>${data.comment}</p>`
+        subject: "|| NEW EMAIL FROM PORTFOLIO CONTACT FORM ||",
+        html: `<h3>${data.name1}</h3>
+            <ul>
+                <li>${data.email}</li>
+                <li>${data.message}</li>
+                <li>${data.location}</li>
+                <li>${data.project}</li>
+            </ul>
+                <h3>Message: </h3>
+                <p>${data.comment}</p>`
     };
 
-    smtpTransport.sendMail(mailOptions, (error, response) => {
-        if (error) {
-            alert("Message failed to send.")
-            res.send(error);
+    nodemailerMailGun.sendMail(mailOptions, (err, res) => {
+        if (err) {
+            console.log("Message failed to send" + err);
         } else {
-            alert("Message sent!")
-            res.send("Success");
+            console.log("Message sent!" + res);
         }
-        smtpTransport.close();
     });
 });
+//Error Handling
 
-app.listen(9000, () => {
-    console.log("server is running on port 9000");
+app.use((err, req, res, next) => {
+    console.error(err);
+    return res.send({ message: err.message });
+});
+
+//
+app.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`);
 });
