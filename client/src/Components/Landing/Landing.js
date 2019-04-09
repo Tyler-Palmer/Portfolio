@@ -80,6 +80,23 @@ class Landing extends Component {
                                         thing.tools.map(x => <li key={x}>{x}</li>)}
                                 </ul>
                             </div>
+                            <div className="projects-container">
+                                {thing.headline === "Projects" &&
+                                    thing.items.map(x => (
+                                        <div className={x.class} key={x.class}>
+                                            <h3>{x.title}</h3>
+                                            <div className={`${x.class}pic`}></div>
+                                            <h4>Tech:</h4>
+                                            {
+                                                x.tech.map(y =>(
+                                                    <h5>{y}</h5>
+                                                ))
+                                            }
+                                            <p>{x.description}</p>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                             <div className="contact-container">
                                 {thing.headline === "Contact" && (
                                     <Link
