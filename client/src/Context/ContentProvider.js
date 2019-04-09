@@ -38,12 +38,14 @@ class ContentProvider extends Component {
                   technologies: [
                       "html",
                       "css",
+                      "sass",
                       "javascript",
                       "react",
                       "nodejs",
                       "express",
                       "mongodb",
                       "api",
+                      "bootstrap",
                       "photoshop",
                       "illustrator",
                       "indesign"
@@ -64,7 +66,65 @@ class ContentProvider extends Component {
                 {
                     id: "c",
                     headline: "Projects",
-                    text: ""
+                    text: "",
+                    items: [
+                        {
+                            tile: "CSS Zen Garden",
+                            tech: ["HTML", "CSS"],
+                            description: "A fully responsive front-end site created as a clone of the original based solely on a PSD. This illustrates the ability to replicate ideas from a design team's mock-ups and implement those into a fully realized project. Landing page only.",
+                            live: "",
+                            git: "",
+                            class: "zen"
+                        },
+                        {
+                            title: "Business Time",
+                            tech: ["HTML", "CSS"],
+                            description: "This is a fully responsive front-end site created as a proof-of-concept for a theoretical yoga studio.",
+                            live: "",
+                            git: "",
+                            class: "business"
+                        },
+                        {
+                            title: "Mario Pest Control",
+                            tech: ["HTML", "CSS", "Javascript"],
+                            description: "A basic page created as an exercise to perform Mario-themed math equations.",
+                            live: "",
+                            git: "",
+                            class: "mario"
+                        },
+                        {
+                            title: "Personality Analyzer",
+                            tech: ["React", "Express", "Node.js", "CSS", "API", "Axios"],
+                            description: "This is a front-end site designed with an Express server to utilize the IBM Watson Personality Analyzer API and provideds interesting insight into text input.",
+                            live: "",
+                            git: "",
+                            class: "ibm"
+                        },
+                        {
+                            title: "Star Wars Bounty Hunter CRUD",
+                            tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "CSS"],
+                            description: "A Star Wars themed, full-stack CRUD todo app utilizing a database.",
+                            live: "",
+                            git: "",
+                            class: "bounty"
+                        },
+                        {
+                            title: "Photography Website",
+                            tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "Axios", "CSS/SASS"],
+                            description: "WORK IN PROGRESS: This is a full-stack website designed to host and display my own personal photography and inevitably sell prints directly from.",
+                            live: "",
+                            git: "",
+                            class: "photo"
+                        },
+                        {
+                            title: "Zillow",
+                            tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "API", "Axios", "SASS", "Data Scraping"],
+                            description:"This is a full-stack group project between myself and a friend designed to replicate the main functions of the Xillow real estate website. It involves multiple 3rd party APIs, and user authentication.",
+                            live: "",
+                            git: "",
+                            class: "zillow"
+                        }
+                    ]
                 },
                 {
                     id: "d",
