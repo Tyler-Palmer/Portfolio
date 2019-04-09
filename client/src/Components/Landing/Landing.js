@@ -87,11 +87,13 @@ class Landing extends Component {
                                             <h3>{x.title}</h3>
                                             <div className={`${x.class}pic`}></div>
                                             <h4>Tech:</h4>
+                                            <ul className="tech">
                                             {
                                                 x.tech.map(y =>(
-                                                    <h5>{y}</h5>
+                                                    <li>{y}</li>
                                                 ))
                                             }
+                                            </ul>
                                             <p>{x.description}</p>
                                         </div>
                                     ))

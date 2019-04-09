@@ -67,7 +67,7 @@ class ContentProvider extends Component {
                     text: "",
                     items: [
                         {
-                            tile: "CSS Zen Garden",
+                            title: "CSS Zen Garden",
                             tech: ["HTML", "CSS"],
                             description: "A fully responsive front-end site created as a clone of the original based solely on a PSD. This illustrates the ability to replicate ideas from a design team's mock-ups and implement those into a fully realized project. Landing page only.",
                             live: "",
