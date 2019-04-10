@@ -36,7 +36,7 @@
             margin-top: 8px;
             margin-bottom: 15px;
         }
-        h3:first-of-type{
+        h3:first-of-type {
             font-family: "Montserrat", sans-serif !important;
             font-size: 3em;
             font-weight: 900;
@@ -92,7 +92,7 @@
             }
             .sass {
                 @include icon-set;
-                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/512px-Sass_Logo_Color.svg.png")
+                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/512px-Sass_Logo_Color.svg.png");
             }
             .javascript {
                 @include icon-set;
@@ -120,7 +120,7 @@
             }
             .bootstrap {
                 @include icon-set;
-                background-image: url("http://pluspng.com/img-png/bootstrap-png-bootstrap-1024.png")
+                background-image: url("http://pluspng.com/img-png/bootstrap-png-bootstrap-1024.png");
             }
             .photoshop {
                 @include icon-set;
@@ -135,40 +135,68 @@
                 background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Adobe_InDesign_CC_icon.svg/512px-Adobe_InDesign_CC_icon.svg.png");
             }
         }
-        .projects-container{
-            .zen{
-                .zenpic{
+        .projects-container {
+            .zen {
+                @include project-set;
+
+                .zenpic {
+                    @include projectPic;
+                    @include linearGradient($random-color, light);
 
                 }
             }
-            .business{
-                .businesspic{
+            .business {
+                @include project-set;
+
+                .businesspic {
+                    @include projectPic;
+                    @include linearGradient($random-color, lightest);
 
                 }
             }
-            .mario{
-                .mariopic{
+            .mario {
+                @include project-set;
+
+                .mariopic {
+                    @include projectPic;
+                    @include linearGradient($random-color, dark);
 
                 }
             }
-            .ibm{
-                .ibmpic{
+            .ibm {
+                @include project-set;
+
+                .ibmpic {
+                    @include projectPic;
+                    @include linearGradient($random-color, darkest);
 
                 }
             }
-            .bounty{
-                .bountypic{
+            .bounty {
+                @include project-set;
+
+                .bountypic {
+                    @include projectPic;
+                    @include linearGradient($random-color, light);
 
                 }
             }
-            .photo{
-                .photopic{
+            .photo {
+                @include project-set;
+
+                .photopic {
+                    @include projectPic;
+                    @include linearGradient($random-color, lightest);
 
                 }
             }
-            .zillow{
-                .zillowpic{
-                    
+            .zillow {
+                @include project-set;
+
+                .zillowpic {
+                    @include projectPic;
+                    @include linearGradient($random-color, dark);
+
                 }
             }
         }
