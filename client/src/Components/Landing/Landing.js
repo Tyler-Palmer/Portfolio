@@ -114,8 +114,8 @@ class Landing extends Component {
                                             <hr/>
                                             <p>{x.description}</p>
                                             <ul className="links">
-                                                <li>Live: <a href={x.live}></a></li>
-                                                <li>Git: <a href={x.git}></a></li>
+                                                <a href={x.live}><li>Live</li></a>
+                                                <a href={x.git}><li>Git</li></a>
                                             </ul>
                                         </div>
                                     ))

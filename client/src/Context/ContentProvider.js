@@ -130,13 +130,14 @@ class ContentProvider extends Component {
         {
             id: "d",
             headline: "Contact",
-            text: "I would love to connect, drop me a line on the contact form or reach out via any of the channels below. This website was written in React"
-        },
-        {
-            id: "e",
-            headline: "MongoDB",
-            text: example
+            text: "I would love to connect, drop me a line on the contact form or reach out via any of the channels below.",
+            text2: "This website was written in React."
         }
+        // {
+        //     id: "e",
+        //     headline: "MongoDB",
+        //     text: example
+        // }
     ]
     render() {
         return (
