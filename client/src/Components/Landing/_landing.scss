@@ -30,6 +30,9 @@
     #b {
         .icon-container {
             margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         h3 {
@@ -42,6 +45,7 @@
             font-size: 3em;
             font-weight: 900;
             letter-spacing: 0.2em;
+            margin: 0;
         }
 
         .list-container {
@@ -62,6 +66,8 @@
         height: 100%;
         width: 100%;
         margin: 0 0 20px 0px;
+        display: flex;
+        flex-direction: column;
         // padding: 0 15px 0 10px;
 
         h1 {
@@ -74,6 +80,17 @@
         p {
             font-size: 8px;
         }
+
+        .picture{
+            align-self: center;
+            background-image: url(./../assets/bitMe.JPG);
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 125px;
+            width: 125px;
+            margin-bottom: 20px;
+            border-radius: 35%;
+        } 
 
         .icon-container {
             height: 100%;
@@ -144,14 +161,6 @@
 
             .zen {
                 @include project-set;
-                // .tech{
-                //     display: flex;
-                //     flex-direction: row;
-                //     flex-wrap: wrap;
-                //     li{
-                //         padding-right: 5px;
-                //     }
-                // }
 
                 .zenpic {
                     @include projectPic;
@@ -161,14 +170,6 @@
             }
             .business {
                 @include project-set;
-                .tech{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    li{
-                        padding-right: 5px;
-                    }
-                }
 
                 .businesspic {
                     @include projectPic;
@@ -178,14 +179,6 @@
             }
             .mario {
                 @include project-set;
-                .tech{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    li{
-                        padding-right: 5px;
-                    }
-                }
 
                 .mariopic {
                     @include projectPic;
@@ -195,14 +188,6 @@
             }
             .ibm {
                 @include project-set;
-                .tech{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    li{
-                        padding-right: 5px;
-                    }
-                }
 
                 .ibmpic {
                     @include projectPic;
@@ -212,14 +197,6 @@
             }
             .bounty {
                 @include project-set;
-                .tech{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    li{
-                        padding-right: 5px;
-                    }
-                }
 
                 .bountypic {
                     @include projectPic;
@@ -229,14 +206,6 @@
             }
             .photo {
                 @include project-set;
-                .tech{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    li{
-                        padding-right: 5px;
-                    }
-                }
 
                 .photopic {
                     @include projectPic;
@@ -246,14 +215,6 @@
             }
             .zillow {
                 @include project-set;
-                .tech{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    li{
-                        padding-right: 5px;
-                    }
-                }
 
                 .zillowpic {
                     @include projectPic;

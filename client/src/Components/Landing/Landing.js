@@ -65,21 +65,38 @@ class Landing extends Component {
                             ref={this.singleRefs[thing.id].ref}
                         >
                             <h1>{thing.headline.toString()}</h1>
+                            {thing.headline === "About Me" &&
+                                <Fragment>
+                                    <div className="picture"></div>
+                                    <h3>My name is Tyler</h3>
+                                </Fragment>
+                            }
+                            {thing.text &&
                             <p>{thing.text.toString()}</p>
-                            <h3>{thing.sub && thing.sub.toString()}</h3>
+                            }
+                            {thing.sub &&
+                            <h3>{thing.sub.toString()}</h3>
+                            }
+                            {thing.headline === "Tools for the Job" &&
                             <div className="icon-container">
                                 {thing.technologies &&
                                     thing.technologies.map(x => (
                                         <div className={x} key={x} />
                                     ))}
                             </div>
-                            <h3>{thing.sub2 && thing.sub2.toString()}</h3>
+                            }
+                            {thing.sub2 &&
+                            <h3>{thing.sub2.toString()}</h3>
+                            }
+                            {thing.headline === "Tools for the Job" &&
                             <div className="list-container">
                                 <ul>
                                     {thing.tools &&
                                         thing.tools.map(x => <li key={x}>{x}</li>)}
                                 </ul>
                             </div>
+                            }
+                            {thing.headline === "Projects" &&
                             <div className="projects-container">
                                 {thing.headline === "Projects" &&
                                     thing.items.map(x => (
@@ -90,7 +107,7 @@ class Landing extends Component {
                                             <ul className="tech">
                                             {
                                                 x.tech.map(y =>(
-                                                    <li>{y},</li>
+                                                    <li key={y}>{y},</li>
                                                 ))
                                             }
                                             </ul>
@@ -104,16 +121,17 @@ class Landing extends Component {
                                     ))
                                 }
                             </div>
+                            }
+                            {thing.headline === "Contact" &&
                             <div className="contact-container">
-                                {thing.headline === "Contact" && (
-                                    <Link
-                                        onClick={this.props.hideSplash}
-                                        to="/contact"
-                                    >
-                                        Contact
-                                    </Link>
-                                )}
+                                <Link
+                                    onClick={this.props.hideSplash}
+                                    to="/contact"
+                                >
+                                Contact
+                                </Link>
                             </div>
+                            }
                         </div>
                     ))}
                 </div>
