@@ -106,19 +106,13 @@ class ContactForm extends Component {
         ];
 
         return (
-            <div
-                style={{
-                    width: "100vw",
-                    height: "100vh",
-                    backgroundColor: "#321142",
-                }}
-            >
-                <Icon
+            <div className="contactForm-wrapper">
+                {/* <Icon
                     type={`menu-${icon}`}
                     className="sidebar-toggle"
                     onClick={this.toggle}
                     style={{marginTop: '5vh'}}
-                />
+                /> */}
                 <Sidebar native state={state}>
                     {({ x }) => (
                         <animated.div
