@@ -90,10 +90,11 @@ class Landing extends Component {
                                             <ul className="tech">
                                             {
                                                 x.tech.map(y =>(
-                                                    <li>{y}</li>
+                                                    <li>{y},</li>
                                                 ))
                                             }
                                             </ul>
+                                            <hr/>
                                             <p>{x.description}</p>
                                             <ul className="links">
                                                 <li>Live: <a href={x.live}></a></li>

@@ -1,7 +1,71 @@
 @import "../ComponentStyles/base";
 
-.footer-container{
-    height: 10vh;
+.footer-container {
+    height: 20vh;
     width: 100vw;
-    background-color: #321142;
+    background-color: $purple;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 75vw;
+
+        .git{
+            @include footer-icon;
+            border-radius: 50%;
+            border: 2px solid white;
+            padding: 10px;
+
+            svg{
+                fill: white;
+            }
+        }
+        .git:hover{
+            border: $purple;
+            background-color: white;
+            svg{
+                fill: $purple;
+            }
+        }
+
+        .linkedIn{
+            @include footer-icon;
+            border-radius: 50%;
+            border: 2px solid white;
+            padding: 10px;
+
+            svg{
+                fill: white;
+            }
+        }
+        .linkedIn:hover{
+            border: $purple;
+            background-color: white;
+            svg{
+                fill: $purple;
+            }
+        }
+
+        .instagram{
+            @include footer-icon;
+            border-radius: 50%;
+            border: 2px solid white;
+            padding: 10px;
+
+            svg{
+                fill: white;
+            }
+        }
+        .instagram:hover{
+            border: $purple;
+            background-color: white;
+            svg{
+                fill: $purple;
+            }
+        }  
+    } 
 }

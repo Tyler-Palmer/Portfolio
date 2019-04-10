@@ -12,11 +12,12 @@
         #fdfbfb,
         #ebedee
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: 20px 15px 0 5px;
+    padding: 20px 20px 0 20px;
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     #a {
         p {
@@ -61,7 +62,7 @@
         height: 100%;
         width: 100%;
         margin: 0 0 20px 0px;
-        padding: 0 15px 0 10px;
+        // padding: 0 15px 0 10px;
 
         h1 {
             margin: 0 0 10px 0;
@@ -136,8 +137,21 @@
             }
         }
         .projects-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
             .zen {
                 @include project-set;
+                // .tech{
+                //     display: flex;
+                //     flex-direction: row;
+                //     flex-wrap: wrap;
+                //     li{
+                //         padding-right: 5px;
+                //     }
+                // }
 
                 .zenpic {
                     @include projectPic;
@@ -147,6 +161,14 @@
             }
             .business {
                 @include project-set;
+                .tech{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    li{
+                        padding-right: 5px;
+                    }
+                }
 
                 .businesspic {
                     @include projectPic;
@@ -156,6 +178,14 @@
             }
             .mario {
                 @include project-set;
+                .tech{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    li{
+                        padding-right: 5px;
+                    }
+                }
 
                 .mariopic {
                     @include projectPic;
@@ -165,6 +195,14 @@
             }
             .ibm {
                 @include project-set;
+                .tech{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    li{
+                        padding-right: 5px;
+                    }
+                }
 
                 .ibmpic {
                     @include projectPic;
@@ -174,6 +212,14 @@
             }
             .bounty {
                 @include project-set;
+                .tech{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    li{
+                        padding-right: 5px;
+                    }
+                }
 
                 .bountypic {
                     @include projectPic;
@@ -183,6 +229,14 @@
             }
             .photo {
                 @include project-set;
+                .tech{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    li{
+                        padding-right: 5px;
+                    }
+                }
 
                 .photopic {
                     @include projectPic;
@@ -192,6 +246,14 @@
             }
             .zillow {
                 @include project-set;
+                .tech{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    li{
+                        padding-right: 5px;
+                    }
+                }
 
                 .zillowpic {
                     @include projectPic;
