@@ -51,11 +51,11 @@ class SplashPage extends Component {
 
     componentDidMount() {
         this._isMounted = true;
-        this.props.hideSplash()
-        // this._isMounted && setTimeout(
-        //     () => this.setState({ show: true }, this.fadingInLetters),
-        //     100
-        // );
+        // this.props.hideSplash()
+        this._isMounted && setTimeout(
+            () => this.setState({ show: true }, this.fadingInLetters),
+            100
+        );
 
         this.animateArrow = TweenMax.fromTo(
             "#arrow",
@@ -72,6 +72,7 @@ class SplashPage extends Component {
      
     render() {
         console.log(`Splashpage is mounted:${this._isMounted}`)
+        console.log(this.state)
         return (
             <div className="splash-container" onScroll={this.handleScroll}>
                 <Parallax ref={ref => (this.parallax = ref)} pages={2}>
@@ -97,7 +98,7 @@ class SplashPage extends Component {
                     <Spring
                         from={{ opacity: 0, marginTop: -1000 }}
                         to={{ opacity: 1, marginTop: 0 }}
-                        delay="1000"
+                        delay="200"
                     >
                         {props => <SplashLeft style={props} />}
                     </Spring>
