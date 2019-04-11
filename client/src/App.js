@@ -17,6 +17,7 @@ class App extends Component {
             },
             showSplash: true
         };
+        this._isMounted = false;
     }
 
     updateActive2 = params => {
@@ -26,13 +27,22 @@ class App extends Component {
     };
 
     hideSplash = () => {
-        this.setState(prevState => ({
-            showSplash: !prevState.showSplash
-        }));
+        const { location } = this.props;
+        if (location.pathname === "/contact") {
+            this.setState({
+                showSplash: false
+            });
+        }
+        this.setState({
+            showSplash: false
+        });
     };
 
     componentDidMount() {
+        this._isMounted = true;
         const myObs = document.querySelectorAll(".obs");
+        const { location } = this.props;
+        console.log(location.pathname);
 
         this.observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -48,19 +58,31 @@ class App extends Component {
         });
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     render() {
         console.log(this.state);
-        const { location } =this.props
+        console.log(`App mount: ${this._isMounted}`);
+        const { location } = this.props;
         return (
             <div className="app-wrapper">
                 {this.state.showSplash && (
                     <Fragment>
-                        <SplashPage className="obs" />
+                        <SplashPage
+                            className="obs"
+                            hideSplash={this.hideSplash}
+                        />
                         <Nav activeThing2={this.state.activeThing2} />
                     </Fragment>
                 )}
                 <TransitionGroup>
-                    <CSSTransition key={location.key} timeout={{ enter: 1000, exit: 1000 }} classNames={'contact'}>
+                    <CSSTransition
+                        key={location.key}
+                        timeout={{ enter: 1000, exit: 1000 }}
+                        classNames={"contact"}
+                    >
                         <Switch location={location}>
                             <Route
                                 exact
@@ -70,8 +92,9 @@ class App extends Component {
                                         {...props}
                                         updateActive2={this.updateActive2}
                                         activeThing2={this.state.activeThing2}
-                                        hideSplash={this.hideSplash}
                                         className="obs"
+                                        hideSplash={this.hideSplash}
+                                        showSplash={this.state.showSplash}
                                     />
                                 )}
                             />

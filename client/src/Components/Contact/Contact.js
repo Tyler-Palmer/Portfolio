@@ -11,7 +11,8 @@ class Contact extends Component {
             location: "",
             project: "",
             comment: "",
-            sent: false
+            sent: false,
+            show: false
         };
     }
 
@@ -31,6 +32,13 @@ class Contact extends Component {
         });
     };
 
+    handleClick = () =>{
+        this.setState({
+            show: false,
+            sent: false
+        })
+    }
+
     handleSubmit = async e => {
         e.preventDefault();
         const data = {
@@ -43,8 +51,9 @@ class Contact extends Component {
         await axios
             .post("/api/form", data)
             .then(
-                this.setState( prevState => ({
-                    sent: !prevState.sent
+                this.setState(prevState => ({
+                    sent: !prevState.sent,
+                    show: !prevState.show
                 }))
             )
             .then(this.clearInputs(), console.log("Message successfully sent!"))
@@ -52,6 +61,7 @@ class Contact extends Component {
     };
 
     render() {
+        console.log(this.state);
         return (
             <div className="form-wrapper">
                 <ContactForm
@@ -62,6 +72,9 @@ class Contact extends Component {
                     project={this.state.project}
                     comment={this.state.comment}
                     handleSubmit={this.handleSubmit}
+                    sent={this.state.sent}
+                    show ={this.state.show}
+                    handleClick={this.handleClick}
                 />
             </div>
         );

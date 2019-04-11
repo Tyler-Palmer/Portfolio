@@ -3,6 +3,7 @@ import { Spring } from "react-spring/renderprops";
 import styled from "styled-components";
 import { TweenMax } from "gsap";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
+import {withRouter} from 'react-router-dom'
 
 const SplashLeft = styled.div`
     height: 200vh;
@@ -28,14 +29,15 @@ const ArrowWrapper = styled.div`
 const hello = ["H", "E", "L", "L", "O", "."];
 
 class SplashPage extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             changeColor: false,
             show: false,
             opacity: 0,
             timer: null
         };
+        this._isMounted = false;
     }
 
     fadingInLetters = () => {
@@ -48,10 +50,12 @@ class SplashPage extends Component {
     };
 
     componentDidMount() {
-        setTimeout(
-            () => this.setState({ show: true }, this.fadingInLetters),
-            100
-        );
+        this._isMounted = true;
+        this.props.hideSplash()
+        // this._isMounted && setTimeout(
+        //     () => this.setState({ show: true }, this.fadingInLetters),
+        //     100
+        // );
 
         this.animateArrow = TweenMax.fromTo(
             "#arrow",
@@ -59,10 +63,15 @@ class SplashPage extends Component {
             { y: -10 },
             { y: 0, repeat: -1, yoyo: true }
         ).pause();
-        this.animateArrow.play();
+        this._isMounted && this.animateArrow.play();
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+     }
+     
     render() {
+        console.log(`Splashpage is mounted:${this._isMounted}`)
         return (
             <div className="splash-container" onScroll={this.handleScroll}>
                 <Parallax ref={ref => (this.parallax = ref)} pages={2}>
@@ -112,4 +121,4 @@ class SplashPage extends Component {
     }
 }
 
-export default SplashPage;
+export default withRouter(SplashPage);
