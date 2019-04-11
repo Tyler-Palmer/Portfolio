@@ -19,6 +19,9 @@
     flex-direction: column;
     align-items: center;
 
+    h1 {
+        font-size: 3em;
+    }
     #a {
         p {
             font-size: 1em;
@@ -28,7 +31,6 @@
     }
 
     #b {
-
         h3 {
             margin-left: 5%;
             margin-top: 8px;
@@ -56,6 +58,37 @@
             }
         }
     }
+
+    #d {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        .contact-container {
+            width: 50%;
+            height: 50px;
+            border-radius: 1.5%;
+            background-color: rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-transition: 0.18s ease-out;
+            -moz-transition: 0.18s ease-out;
+            -o-transition: 0.18s ease-out;
+            transition: 0.18s ease-out;
+            box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+
+            &:hover {
+                box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
     .text-card {
         height: 100%;
         width: 100%;
@@ -75,7 +108,7 @@
             font-size: 8px;
         }
 
-        .picture{
+        .picture {
             align-self: center;
             background-image: url(./../assets/bitMe.JPG);
             background-repeat: no-repeat;
@@ -84,7 +117,7 @@
             width: 125px;
             margin-bottom: 20px;
             border-radius: 35%;
-        } 
+        }
 
         .icon-container {
             height: 100%;
@@ -159,10 +192,9 @@
                 @include project-set;
 
                 .zenpic {
+                    background-image: url(./../assets/zen-pic.jpg);
                     @include projectPic;
-                    @include linearGradient($random-color, light);
-                    background-image: url(./../assets/zen-pic.jpg)
-
+                    // @include linearGradient($random-color, light);
                 }
             }
             .business {
@@ -171,7 +203,6 @@
                 .businesspic {
                     @include projectPic;
                     @include linearGradient($random-color, lightest);
-
                 }
             }
             .mario {
@@ -180,17 +211,15 @@
                 .mariopic {
                     @include projectPic;
                     @include linearGradient($random-color, dark);
-
                 }
             }
             .ibm {
                 @include project-set;
 
                 .ibmpic {
-                    @include projectPic;
-                    @include linearGradient($random-color, darkest);
                     background-image: url(./../assets/IBM-pic.jpg);
-
+                    @include projectPic;
+                    // @include linearGradient($random-color, darkest);
                 }
             }
             .bounty {
@@ -199,7 +228,6 @@
                 .bountypic {
                     @include projectPic;
                     @include linearGradient($random-color, light);
-
                 }
             }
             .photo {
@@ -208,7 +236,6 @@
                 .photopic {
                     @include projectPic;
                     @include linearGradient($random-color, lightest);
-
                 }
             }
             .zillow {
@@ -217,17 +244,78 @@
                 .zillowpic {
                     @include projectPic;
                     @include linearGradient($random-color, dark);
-
                 }
             }
-        .links{
-            display: flex;
-            flex-direction: row;
+            .links {
+                display: flex;
+                flex-direction: row;
 
-            li{
-                margin-left: 10px;
+                li {
+                    margin-left: 25px;
+                }
             }
-        }    
+
+            .tech-container {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                margin-top: 5px;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 5px;
+                padding-left: 7%;
+
+                h4 {
+                    margin-right: 5px;
+                    margin-bottom: 0;
+                }
+                .tech {
+                    font-size: 0.8em;
+                    margin-bottom: 0;
+                    margin-top: 3px;
+                }
+            }
+            p {
+                padding-right: 25px;
+                padding-left: 25px;
+                font-size: 0.8em;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .landing-wrapper {
+        #d{
+            .contact-container{
+                width: 40%;
+            }
+        }
+        .text-card {
+            .projects-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: space-evenly;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .landing-wrapper {
+        .text-card {
+            .projects-container {
+                .tech-container {
+                    h4 {
+                        font-size: 1.2em;
+                    }
+                    .tech {
+                        font-size: 1em;
+                    }
+                }
+            }
         }
     }
 }

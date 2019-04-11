@@ -56,7 +56,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto;
+    height: 50vh;
     width: 90vw;
     border: 2px solid rgba(215,215,215,1);
     padding: 5px;
@@ -67,6 +67,25 @@
 
     &:hover{
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+    @media(min-width: 768px){
+        width: 40vw;
+        margin: 20px;
+    }
+    @media(min-width: 1024px){
+        width: 28vw;
+        margin: 15px;
+
+        h3{
+            font-size:1.5em;
+        }
+        p{
+            font-size: 1em;
+        }
+    }
+    @media(min-width: 1440px){
+        height: 40vh;
     }
 
     .tech{
@@ -123,9 +142,24 @@ $random-color: hsl(
 @mixin projectPic {
     width: 175px;
     height: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
     background-repeat: no-repeat;
-    background-position: center;
     background-size: contain;
+    background-position: center;
+
+    @media(min-width: 425px){
+        width: 200px;
+        height: 125px;
+    }
+    @media(min-width: 768px){
+        width: 225px;
+        height: 125px;
+    }
+    @media(min-width: 1024px){
+        width: 250px;
+        height: 150px;
+    }
 }
 
 //Misc
@@ -135,3 +169,20 @@ $bg-cover: cover;
 $bg-center: center;
 $bg-no-repeat: no-repeat;
 $roboto: "Roboto";
+
+//Transition for Contact Page
+
+.contact-enter {
+    transform: translate(100%);
+  }
+  .contact-enter.contact-enter-active {
+    transform: translate(0%);
+    transition: transform 1000ms ease-in-out;
+  }
+  .contact-leave {
+    transform: translate(0%);
+  }
+  .contact-leave.contact-leave-active {
+    transform: translate(-100%);
+    transition: transform 1000ms ease-in-out;
+  }

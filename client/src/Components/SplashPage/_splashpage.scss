@@ -30,48 +30,38 @@
                 color: white;
                 margin-top: -40px;
                 opacity: 0;
-                animation-delay: 1.5s;
-                animation: 2s cubic-bezier(0.3, 0.25, 0.25, 1.25) forwards
-                    fade-in;
                 -webkit-animation-delay: 1.5s;
-                -webkit-animation: 2s cubic-bezier(0.3, 0.25, 0.25, 1.25)
-                    forwards fade-in;
-            }
-            .letters:last-child {
+                -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+                -moz-animation-delay: 1.5s;
+                -moz-animation: fadein 2s;
+                -ms-animation-delay: 1.5s; /* Firefox < 16 */
+                 -ms-animation: fadein 2s; /* Internet Explorer */
+                 -o-animation-delay: 1.5s; 
+                 -o-animation: fadein 2s; /* Opera < 12.1 */
+                 animation-delay: 1.5s;    
+                 animation: fadein 2s;
+              }
+
+              .letters:last-child {
                 color: #ff003d;
             }
-
-            @for $i from 1 through 6 {
-                .letters {
-                    &:nth-child(#{$i}) {
-                        // Delay the animation. Delay increases as items loop.
-                        animation-delay: $i * (0.35s);
-                    }
-                }
-            }
-            @keyframes fade-in {
-                0% {
-                    opacity: 0;
-                    transform: translateX(50%) scale(0) rotateZ(-60deg);
-                }
-
-                100% {
-                    opacity: 1;
-                    transform: translateX(0) scale(1) rotateZ(0deg);
-                }
-            }
-
-            @-webkit-keyframes fade-in {
-                0% {
-                    opacity: 0;
-                    transform: translateX(50%) scale(0) rotateZ(-60deg);
-                }
-
-                100% {
-                    opacity: 1;
-                    transform: translateX(0) scale(1) rotateZ(0deg);
-                }
-            }
+              
+              @keyframes fadein {
+              from { opacity: 0; }
+              to   { opacity: 1; }
+              }
+              
+              /* Firefox < 16 */
+              @-moz-keyframes fadein {
+              from { opacity: 0; }
+              to   { opacity: 1; }
+              }
+              
+              /* Safari, Chrome and Opera > 12.1 */
+              @-webkit-keyframes fadein {
+              from { opacity: 0; }
+              to   { opacity: 1; }
+              }
         }
     }
     #arrow {
@@ -166,7 +156,7 @@
             height: 50vh;
             width: 100% !important;
             margin-top: 50vh;
-            margin-bottom: 2px;
+            margin-bottom: 5px;
             padding: 0;
             z-index: 100;
             align-self: flex-end;

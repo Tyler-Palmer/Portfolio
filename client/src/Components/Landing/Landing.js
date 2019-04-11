@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { withContent } from "../../Context/ContentProvider";
-import Nav from "../Nav/Nav";
 
 class Landing extends Component {
     constructor(props) {
@@ -65,73 +64,79 @@ class Landing extends Component {
                             ref={this.singleRefs[thing.id].ref}
                         >
                             <h1>{thing.headline.toString()}</h1>
-                            {thing.headline === "About Me" &&
+                            {thing.headline === "About Me" && (
                                 <Fragment>
-                                    <div className="picture"></div>
+                                    <div className="picture" />
                                     <h3>My name is Tyler</h3>
                                 </Fragment>
-                            }
-                            {thing.text &&
-                            <p>{thing.text.toString()}</p>
-                            }
-                            {thing.sub &&
-                            <h3>{thing.sub.toString()}</h3>
-                            }
-                            {thing.headline === "Tools for the Job" &&
-                            <div className="icon-container">
-                                {thing.technologies &&
-                                    thing.technologies.map(x => (
-                                        <div className={x} key={x} />
-                                    ))}
-                            </div>
-                            }
-                            {thing.sub2 &&
-                            <h3>{thing.sub2.toString()}</h3>
-                            }
-                            {thing.headline === "Tools for the Job" &&
-                            <div className="list-container">
-                                <ul>
-                                    {thing.tools &&
-                                        thing.tools.map(x => <li key={x}>{x}</li>)}
-                                </ul>
-                            </div>
-                            }
-                            {thing.headline === "Projects" &&
-                            <div className="projects-container">
-                                {thing.headline === "Projects" &&
-                                    thing.items.map(x => (
-                                        <div className={x.class} key={x.class}>
-                                            <h3>{x.title}</h3>
-                                            <div className={`${x.class}pic`}></div>
-                                            <h4>Tech:</h4>
-                                            <ul className="tech">
-                                            {
-                                                x.tech.map(y =>(
-                                                    <li key={y}>{y},</li>
-                                                ))
-                                            }
-                                            </ul>
-                                            <hr/>
-                                            <p>{x.description}</p>
-                                            <ul className="links">
-                                                <a href={x.live}><li>Live</li></a>
-                                                <a href={x.git}><li>Git</li></a>
-                                            </ul>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                            }
-                            {thing.headline === "Contact" &&
-                            <div className="contact-container">
-                                <Link
-                                    onClick={this.props.hideSplash}
-                                    to="/contact"
-                                >
-                                Contact
-                                </Link>
-                            </div>
-                            }
+                            )}
+                            {thing.text && <p>{thing.text.toString()}</p>}
+                            {thing.sub && <h3>{thing.sub.toString()}</h3>}
+                            {thing.headline === "Tools for the Job" && (
+                                <div className="icon-container">
+                                    {thing.technologies &&
+                                        thing.technologies.map(x => (
+                                            <div className={x} key={x} />
+                                        ))}
+                                </div>
+                            )}
+                            {thing.sub2 && <h3>{thing.sub2.toString()}</h3>}
+                            {thing.headline === "Tools for the Job" && (
+                                <div className="list-container">
+                                    <ul>
+                                        {thing.tools &&
+                                            thing.tools.map(x => (
+                                                <li key={x}>{x}</li>
+                                            ))}
+                                    </ul>
+                                </div>
+                            )}
+                            {thing.headline === "Projects" && (
+                                <div className="projects-container">
+                                    {thing.headline === "Projects" &&
+                                        thing.items.map(x => (
+                                            <div
+                                                className={x.class}
+                                                key={x.class}
+                                            >
+                                                <h3>{x.title}</h3>
+                                                <div
+                                                    className={`${x.class}pic`}
+                                                />
+                                                <div className="tech-container">
+                                                    <h4>Tech:</h4>
+                                                    <ul className="tech">
+                                                        {x.tech.map(y => (
+                                                            <li key={y}>
+                                                                {y},
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <hr />
+                                                <p>{x.description}</p>
+                                                <ul className="links">
+                                                    <a href={x.live}>
+                                                        <li>Live</li>
+                                                    </a>
+                                                    <a href={x.git}>
+                                                        <li>Git</li>
+                                                    </a>
+                                                </ul>
+                                            </div>
+                                        ))}
+                                </div>
+                            )}
+                            {thing.headline === "Contact" && (
+                                <div className="contact-container">
+                                    <Link
+                                        onClick={this.props.hideSplash}
+                                        to="/contact"
+                                    >
+                                        Contact Form
+                                    </Link>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
