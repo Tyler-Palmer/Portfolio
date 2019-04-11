@@ -70,35 +70,11 @@ class ContentProvider extends Component {
             text: "",
             items: [
                 {
-                    title: "CSS Zen Garden",
-                    tech: ["HTML", "CSS"],
-                    description: "A fully responsive front-end site created as a clone of the original based solely on a PSD. This illustrates the ability to replicate ideas from a design team's mock-ups and implement those into a fully realized project. Landing page only.",
-                    live: "",
-                    git: "",
-                    class: "zen"
-                },
-                {
-                    title: "Business Time",
-                    tech: ["HTML", "CSS"],
-                    description: "This is a fully responsive front-end site created as a proof-of-concept for a theoretical yoga studio.",
-                    live: "",
-                    git: "",
-                    class: "business"
-                },
-                {
-                    title: "Mario Pest Control",
-                    tech: ["HTML", "CSS", "Javascript"],
-                    description: "A basic page created as an exercise to perform Mario-themed math equations.",
-                    live: "",
-                    git: "",
-                    class: "mario"
-                },
-                {
                     title: "Personality Analyzer",
                     tech: ["React", "Express", "Node.js", "CSS", "API", "Axios"],
                     description: "This is a front-end site designed with an Express server to utilize the IBM Watson Personality Analyzer API and provideds interesting insight into text input.",
-                    live: "",
-                    git: "",
+                    live: "https://tp-personality-insights.herokuapp.com/",
+                    git: "https://github.com/Tyler-Palmer/ibm-personality-project",
                     class: "ibm"
                 },
                 {
@@ -124,6 +100,30 @@ class ContentProvider extends Component {
                     live: "",
                     git: "",
                     class: "zillow"
+                },
+                {
+                    title: "CSS Zen Garden",
+                    tech: ["HTML", "CSS"],
+                    description: "A fully responsive front-end site created as a clone of the original based solely on a PSD. This illustrates the ability to replicate ideas from a design team's mock-ups and implement those into a fully realized project. Landing page only.",
+                    live: "https://tyler-palmer.github.io/CSS-Zen-Garden/",
+                    git: "https://github.com/Tyler-Palmer/CSS-Zen-Garden",
+                    class: "zen"
+                },
+                {
+                    title: "Business Time",
+                    tech: ["HTML", "CSS"],
+                    description: "This is a fully responsive front-end site created as a proof-of-concept for a theoretical yoga studio.",
+                    live: "https://tyler-palmer.github.io/business-time/",
+                    git: "https://github.com/Tyler-Palmer/business-time",
+                    class: "business"
+                },
+                {
+                    title: "Mario Pest Control",
+                    tech: ["HTML", "CSS", "Javascript"],
+                    description: "A basic page created as an exercise to perform Mario-themed math equations.",
+                    live: "",
+                    git: "",
+                    class: "mario"
                 }
             ]
         },
@@ -131,7 +131,8 @@ class ContentProvider extends Component {
             id: "d",
             headline: "Contact",
             text: "I would love to connect, drop me a line on the contact form or reach out via any of the channels below.",
-            text2: "This website was written in React."
+            text2: "This website was written in React.",
+            resume: ""
         }
         // {
         //     id: "e",

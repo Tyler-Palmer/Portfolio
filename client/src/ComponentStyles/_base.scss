@@ -123,6 +123,9 @@ $random-color: hsl(
 @mixin projectPic {
     width: 175px;
     height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 //Misc

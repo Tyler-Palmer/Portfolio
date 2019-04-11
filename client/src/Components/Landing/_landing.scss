@@ -161,6 +161,7 @@
                 .zenpic {
                     @include projectPic;
                     @include linearGradient($random-color, light);
+                    background-image: url(./../assets/zen-pic.jpg)
 
                 }
             }
@@ -188,6 +189,7 @@
                 .ibmpic {
                     @include projectPic;
                     @include linearGradient($random-color, darkest);
+                    background-image: url(./../assets/IBM-pic.jpg);
 
                 }
             }
@@ -218,6 +220,14 @@
 
                 }
             }
+        .links{
+            display: flex;
+            flex-direction: row;
+
+            li{
+                margin-left: 10px;
+            }
+        }    
         }
     }
 }
