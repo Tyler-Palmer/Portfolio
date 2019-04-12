@@ -81,24 +81,24 @@ class ContentProvider extends Component {
                     title: "Star Wars Bounty Hunter CRUD",
                     tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "CSS"],
                     description: "A Star Wars themed, full-stack CRUD todo app utilizing a database.",
-                    live: "",
-                    git: "",
+                    live: "#",
+                    git: "#",
                     class: "bounty"
                 },
                 {
                     title: "Photography Website",
                     tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "Axios", "CSS/SASS"],
                     description: "WORK IN PROGRESS: This is a full-stack website designed to host and display my own personal photography and inevitably sell prints directly from.",
-                    live: "",
-                    git: "",
+                    live: "#",
+                    git: "#",
                     class: "photo"
                 },
                 {
                     title: "Zillow",
                     tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "API", "Axios", "SASS", "Data Scraping"],
                     description:"This is a full-stack group project between myself and a friend designed to replicate the main functions of the Xillow real estate website. It involves multiple 3rd party APIs, and user authentication.",
-                    live: "",
-                    git: "",
+                    live: "#",
+                    git: "#",
                     class: "zillow"
                 },
                 {
@@ -121,8 +121,8 @@ class ContentProvider extends Component {
                     title: "Mario Pest Control",
                     tech: ["HTML", "CSS", "Javascript"],
                     description: "A basic page created as an exercise to perform Mario-themed math equations.",
-                    live: "",
-                    git: "",
+                    live: "#",
+                    git: "#",
                     class: "mario"
                 }
             ]
@@ -132,7 +132,7 @@ class ContentProvider extends Component {
             headline: "Contact",
             text: "I would love to connect, drop me a line on the contact form or reach out via any of the channels below.",
             text2: "This website was written in React.",
-            resume: ""
+            resume: "https://drive.google.com/open?id=1pQfvWOnUTfvB4sEvYQSeMhzTZ_3oYE9C"
         }
         // {
         //     id: "e",

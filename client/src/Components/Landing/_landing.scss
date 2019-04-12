@@ -82,7 +82,7 @@
             -o-transition: 0.18s ease-out;
             transition: 0.18s ease-out;
             box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
 
             &:hover {
                 box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.5);
@@ -201,8 +201,8 @@
                 @include project-set;
 
                 .businesspic {
+                    background-image: url(./../assets/Business-time.png);
                     @include projectPic;
-                    @include linearGradient($random-color, lightest);
                 }
             }
             .mario {
@@ -282,6 +282,21 @@
                 margin-bottom: 5px;
             }
         }
+
+        .resume {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            height: 100px;
+            width: 100px;
+            background-image: url(./../assets/document-icon.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &:hover {
+                box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.5);
+            }
+        }
     }
 }
 
@@ -291,7 +306,6 @@
             .contact-container {
                 width: 40%;
                 font-size: 1.25em;
-
             }
         }
         .text-card {
