@@ -39,6 +39,11 @@
     background-size: contain;
     background-position: center;
     margin: 10px;
+
+    @media(min-width:1024px){
+        height: 150px;
+        width: 150px;
+    }
 }
 
 @mixin footer-icon{

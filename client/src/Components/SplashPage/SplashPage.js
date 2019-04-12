@@ -8,7 +8,6 @@ import {withRouter} from 'react-router-dom'
 const SplashLeft = styled.div`
     height: 200vh;
     width: 100vw;
-    ${"" /* background-color: #6665dd; */}
     background-color: #321142;
     top: 0;
     left: 0;
@@ -40,30 +39,30 @@ class SplashPage extends Component {
         this._isMounted = false;
     }
 
-    fadingInLetters = () => {
-        const timer = setInterval(() => {
-            if (this.state.opacity >= 1) {
-                clearInterval(timer);
-            }
-            this.setState({ opacity: this.state.opacity + 0.1 });
-        }, 100);
-    };
+    // fadingInLetters = () => {
+    //     const timer = setInterval(() => {
+    //         if (this.state.opacity >= 1) {
+    //             clearInterval(timer);
+    //         }
+    //         this.setState({ opacity: this.state.opacity + 0.1 });
+    //     }, 100);
+    // };
 
     componentDidMount() {
         this._isMounted = true;
         // this.props.hideSplash()
         this._isMounted && setTimeout(
-            () => this.setState({ show: true }, this.fadingInLetters),
-            100
+            () => this.setState({ show: true }),
+            2500
         );
 
-        this.animateArrow = TweenMax.fromTo(
-            "#arrow",
-            0.95,
-            { y: -10 },
-            { y: 0, repeat: -1, yoyo: true }
-        ).pause();
-        this._isMounted && this.animateArrow.play();
+        // this.animateArrow = TweenMax.fromTo(
+        //     "#arrow",
+        //     0.95,
+        //     { y: -10 },
+        //     { y: 0, repeat: -1, yoyo: true }
+        // ).pause();
+        // this._isMounted && this.animateArrow.play();
     }
 
     componentWillUnmount() {
@@ -71,7 +70,6 @@ class SplashPage extends Component {
      }
      
     render() {
-        console.log(`Splashpage is mounted:${this._isMounted}`)
         console.log(this.state)
         return (
             <div className="splash-container" onScroll={this.handleScroll}>
@@ -80,7 +78,8 @@ class SplashPage extends Component {
                         speed={1}
                         offset={0}
                         className="hello-container"
-                    >
+                    >   
+                        {this.state.show &&
                         <div className="hello">
                             {hello.map((each, i) => (
                                 <span className="letters" key={i}>
@@ -88,6 +87,7 @@ class SplashPage extends Component {
                                 </span>
                             ))}
                         </div>
+                        }
                     </ParallaxLayer>
                     <ArrowWrapper>
                         <div
@@ -98,7 +98,6 @@ class SplashPage extends Component {
                     <Spring
                         from={{ opacity: 0, marginTop: -1000 }}
                         to={{ opacity: 1, marginTop: 0 }}
-                        delay="200"
                     >
                         {props => <SplashLeft style={props} />}
                     </Spring>

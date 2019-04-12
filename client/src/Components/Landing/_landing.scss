@@ -70,7 +70,7 @@
             margin-bottom: 30px;
         }
         .contact-container {
-            width: 50%;
+            width: 30vw;
             height: 50px;
             border-radius: 1.5%;
             background-color: rgba(0, 0, 0, 0.05);
@@ -304,7 +304,6 @@
     .landing-wrapper {
         #d {
             .contact-container {
-                width: 40%;
                 font-size: 1.25em;
             }
         }
@@ -321,6 +320,12 @@
 
 @media (min-width: 1024px) {
     .landing-wrapper {
+
+        #d {
+            .contact-container {
+                font-size: 1.5em;
+            }
+        }
         .text-card {
             h3 {
                 font-size: 2em;

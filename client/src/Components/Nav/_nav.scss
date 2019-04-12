@@ -1,6 +1,6 @@
 @import "../ComponentStyles/base";
 
-.nav-container{
+.nav-container {
     display: flex;
     justify-content: center;
     z-index: 100;
@@ -11,16 +11,16 @@
     position: sticky;
     top: 0px;
 
-    .logo{
+    .logo {
         background-image: url(./../assets/TP-logo2.svg);
         background-repeat: no-repeat;
         background-size: cover;
         height: 50px;
         width: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
-    .navigation{
+    .navigation {
         margin: 10px 10px 5px 10px;
         display: flex;
         flex-direction: row;
@@ -29,10 +29,33 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
 
-    div{
-        height: 25px;
-        padding: 3px;
-
+        .nav-item {
+            // height: 25px;
+            font-size: 1em;
+            padding: 3px;
+            a{
+                margin: 0;
+            }
+        }
     }
+}
+
+@media(min-width: 1024px){
+    .nav-container{
+        .navigation{
+            .nav-item{
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .nav-container{
+        .navigation{
+            .nav-item{
+                font-size: 2em;
+            }
+        }
     }
 }

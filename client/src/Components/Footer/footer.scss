@@ -1,85 +1,99 @@
 @import "../ComponentStyles/base";
 
 .footer-container {
-    height: 20vh;
+    height: 20%;
     width: 100vw;
     background-color: $purple;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;    
+    color: white;
     .footer {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         width: 75vw;
         margin-top: 5%;
+        height: 100%;
 
-        .git{
+        .git {
             @include footer-icon;
             border-radius: 50%;
             border: 2px solid white;
             padding: 10px;
 
-            svg{
+            svg {
                 fill: white;
             }
         }
-        .git:hover{
+        .git:hover {
             border: $purple;
             background-color: white;
-            svg{
+            svg {
                 fill: $purple;
             }
         }
 
-        .linkedIn{
+        .linkedIn {
             @include footer-icon;
             border-radius: 50%;
             border: 2px solid white;
             padding: 10px;
 
-            svg{
+            svg {
                 fill: white;
             }
         }
-        .linkedIn:hover{
+        .linkedIn:hover {
             border: $purple;
             background-color: white;
-            svg{
+            svg {
                 fill: $purple;
             }
         }
 
-        .instagram{
+        .instagram {
             @include footer-icon;
             border-radius: 50%;
             border: 2px solid white;
             padding: 10px;
 
-            svg{
+            svg {
                 fill: white;
             }
         }
-        .instagram:hover{
+        .instagram:hover {
             border: $purple;
             background-color: white;
-            svg{
+            svg {
                 fill: $purple;
             }
-        }  
+        }
     }
-    .copyright{
+    .copyright {
         display: flex;
         justify-content: center;
         align-items: flex-end;
         width: 100%;
-        height:50%;
+        height: 50%;
         margin-top: 20px;
 
-        p{
+        p {
             color: white;
+            font-size: 1em;
+            font-weight: bolder;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-container {
+        .copyright {
+            p {
+                font-size: 1.5em;
+            }
         }
     }
 }

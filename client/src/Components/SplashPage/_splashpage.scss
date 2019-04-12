@@ -3,14 +3,6 @@
 .splash-container {
     @include splash-dim;
     position: relative;
-    // display: grid;
-    // grid-template-columns: 1fr;
-    // padding-left: 10%;
-    // padding-right: 10%;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
 
     .hello-container {
         height: 25%;
@@ -20,10 +12,11 @@
         align-items: flex-start;
         z-index: 500;
         position: absolute;
+        padding-left: 5%;
+        padding-right: 5%;
 
         .hello {
             margin-top: 25%;
-            margin-left: 10%;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -40,46 +33,72 @@
                 margin-top: -40px;
                 opacity: 0;
                 z-index: 500;
-                -webkit-animation-delay: 2s;
-                -webkit-animation: fadein 2s forwards; /* Safari, Chrome and Opera > 12.1 */
-                -moz-animation-delay: 2s;
-                -moz-animation: fadein 2s forwards;
-                animation-delay: 2s;
-                animation: fadein 2s forwards;
+                animation: 1.5s cubic-bezier(0.25, .1, .42, 1.25) both
+                    roll-fade;
+                border-radius: 4px;
+                float: left;
+                // animation-delay: 3s;
+                // animation: fadein 2s forwards;
+                // -webkit-animation-delay: 3s;
+                // -webkit-animation: fadein 2s forwards; /* Safari, Chrome and Opera > 12.1 */
+                // -moz-animation-delay: 3s;
+                // -moz-animation: fadein 2s forwards;
             }
 
             .letters:last-child {
                 color: #ff003d;
             }
 
-            @keyframes fadein {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-
-            /* Firefox < 16 */
-            @-moz-keyframes fadein {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
+            // Loop
+            @for $i from 1 through 6 {
+                .letters {
+                    &:nth-child(#{$i}) {
+                        // Delay the animation. Delay increases as items loop.
+                        animation-delay: $i * (0.35s);
+                    }
                 }
             }
 
-            /* Safari, Chrome and Opera > 12.1 */
-            @-webkit-keyframes fadein {
-                from {
+            @keyframes roll-fade {
+                0% {
                     opacity: 0;
+                    transform: translateX(50%) scale(0) rotateZ(-60deg);
                 }
-                to {
+
+                100% {
                     opacity: 1;
+                    transform: translateX(0) scale(1) rotateZ(0deg);
                 }
             }
+
+            // @keyframes fadein {
+            //     from {
+            //         opacity: 0;
+            //     }
+            //     to {
+            //         opacity: 1;
+            //     }
+            // }
+
+            // /* Firefox < 16 */
+            // @-moz-keyframes fadein {
+            //     from {
+            //         opacity: 0;
+            //     }
+            //     to {
+            //         opacity: 1;
+            //     }
+            // }
+
+            // /* Safari, Chrome and Opera > 12.1 */
+            // @-webkit-keyframes fadein {
+            //     from {
+            //         opacity: 0;
+            //     }
+            //     to {
+            //         opacity: 1;
+            //     }
+            // }
         }
     }
     #arrow {
@@ -90,8 +109,8 @@
         width: 50px;
         z-index: 200;
         transition: 2.5s;
-        animation: bounce 1s infinite alternate;
-        -webkit-animation: bounce 1s infinite alternate;
+        animation: bounce 1s infinite alternate, fadein 6s forwards;
+        -webkit-animation: bounce 1s infinite alternate, fadein 6s forwards;
     }
 
     @keyframes bounce {
@@ -108,6 +127,35 @@
         }
         to {
             transform: translateY(-10px);
+        }
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
         }
     }
 
@@ -174,10 +222,11 @@
             background-image: url(./../assets/programming-vector2_animated.svg);
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
             height: 50vh;
             width: 100%;
             margin-top: 50vh;
-            margin-bottom: 5px;
+            margin-bottom: 1%;
             padding: 0;
             z-index: 100;
             align-self: center;
@@ -185,160 +234,14 @@
             display: block;
         }
     }
-    // .cube-container {
-    //     @include splash-dim;
-    //     background: #fdfbfb; /* fallback for old browsers */
-    //     background: -webkit-linear-gradient(
-    //         to right,
-    //         #fdfbfb,
-    //         #ebedee
-    //     ); /* Chrome 10-25, Safari 5.1-6 */
-    //     background: linear-gradient(
-    //         to right,
-    //         #fdfbfb,
-    //         #ebedee
-    //     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: flex-start;
-    //     z-index: 100;
-
-    //     .sk-folding-cube {
-    //         margin: 20px auto;
-    //         margin-top: 50%;
-    //         width: 180px;
-    //         height: 180px;
-    //         position: absolute;
-    //         z-index: 100;
-    //         -webkit-transform: rotateZ(45deg);
-    //         transform: rotateZ(45deg);
-
-    //         .purple {
-    //             float: left;
-    //             width: 50%;
-    //             height: 50%;
-    //             position: relative;
-    //             -webkit-transform: scale(1.1);
-    //             -ms-transform: scale(1.1);
-    //             transform: scale(1.1);
-    //         }
-
-    //         .purple:before {
-    //             content: "";
-    //             position: absolute;
-    //             top: 0;
-    //             left: 0;
-    //             width: 100%;
-    //             height: 100%;
-    //             background-color: #6665dd;
-    //             -webkit-animation: sk-foldCubeAngle 2.6s infinite linear both;
-    //             -webkit-animation-iteration-count: 1;
-    //             animation: sk-foldCubeAngle 2.6s infinite linear both;
-    //             animation-iteration-count: 1;
-    //             -webkit-transform-origin: 100% 100%;
-    //             -ms-transform-origin: 100% 100%;
-    //             transform-origin: 100% 100%;
-    //         }
-
-    //         .white {
-    //             float: left;
-    //             width: 50%;
-    //             height: 50%;
-    //             position: relative;
-    //             -webkit-transform: scale(1.1);
-    //             -ms-transform: scale(1.1);
-    //             transform: scale(1.1);
-    //         }
-
-    //         .white:before {
-    //             content: "";
-    //             position: absolute;
-    //             top: 0;
-    //             left: 0;
-    //             width: 100%;
-    //             height: 100%;
-    //             background-color: #fff;
-    //             -webkit-animation: sk-foldCubeAngle 2.6s infinite linear both;
-    //             -webkit-animation-iteration-count: 2;
-    //             animation: sk-foldCubeAngle 2.6s infinite linear both;
-    //             animation-iteration-count: 2;
-    //             -webkit-transform-origin: 100% 100%;
-    //             -ms-transform-origin: 100% 100%;
-    //             transform-origin: 100% 100%;
-    //         }
-
-    //         .sk-cube2 {
-    //             -webkit-transform: scale(1.1) rotateZ(90deg);
-    //             transform: scale(1.1) rotateZ(90deg);
-    //         }
-    //         .sk-cube3 {
-    //             -webkit-transform: scale(1.1) rotateZ(180deg);
-    //             transform: scale(1.1) rotateZ(180deg);
-    //         }
-    //         .sk-cube4 {
-    //             -webkit-transform: scale(1.1) rotateZ(180deg);
-    //             transform: scale(1.1) rotateZ(180deg);
-    //         }
-    //         .sk-cube2:before {
-    //             -webkit-animation-delay: 0.3s;
-    //             animation-delay: 0.3s;
-    //         }
-    //         .sk-cube3:before {
-    //             -webkit-animation-delay: 0.9s;
-    //             animation-delay: 0.9s;
-    //         }
-    //         .sk-cube4:before {
-    //             -webkit-animation-delay: 0.6s;
-    //             animation-delay: 0.6s;
-    //         }
-
-    //         @-webkit-keyframes sk-foldCubeAngle {
-    //             0%,
-    //             10% {
-    //                 -webkit-transform: perspective(140px) rotateX(-180deg);
-    //                 transform: perspective(140px) rotateX(-180deg);
-    //                 opacity: 0;
-    //             }
-    //             25%,
-    //             75% {
-    //                 -webkit-transform: perspective(140px) rotateX(0deg);
-    //                 transform: perspective(140px) rotateX(0deg);
-    //                 opacity: 1;
-    //             }
-    //             90%,
-    //             100% {
-    //                 -webkit-transform: perspective(140px) rotateY(180deg);
-    //                 transform: perspective(140px) rotateY(180deg);
-    //                 opacity: 0;
-    //             }
-    //         }
-
-    //         @keyframes sk-foldCubeAngle {
-    //             0%,
-    //             10% {
-    //                 -webkit-transform: perspective(140px) rotateX(-180deg);
-    //                 transform: perspective(140px) rotateX(-180deg);
-    //                 opacity: 0;
-    //             }
-    //             25%,
-    //             75% {
-    //                 -webkit-transform: perspective(140px) rotateX(0deg);
-    //                 transform: perspective(140px) rotateX(0deg);
-    //                 opacity: 1;
-    //             }
-    //             90%,
-    //             100% {
-    //                 -webkit-transform: perspective(140px) rotateY(180deg);
-    //                 transform: perspective(140px) rotateY(180deg);
-    //                 opacity: 0;
-    //             }
-    //         }
-    //     }
-    // }
 }
 
 @media (min-width: 375px) {
     .splash-container {
+        .hello-container{
+            padding-left: 10%;
+            padding-right: 10%;
+        }
         #intro-container {
             #programming {
                 margin-top: 40vh;
@@ -350,6 +253,10 @@
 
 @media (min-width: 425px) {
     .splash-container {
+        .hello-container{
+            padding-left: 15%;
+            padding-right: 15%;
+        }
         #intro-container {
             #programming {
                 margin-top: 30vh;
@@ -388,17 +295,6 @@
     }
 }
 
-@media (min-width: 694px) {
-    .splash-container {
-        #intro-container {
-            #programming {
-                background-size: contain;
-                width: 80%;
-            }
-        }
-    }
-}
-
 @media (min-width: 768px) {
     .splash-container {
         #intro-container {
@@ -412,6 +308,10 @@
 @media (min-width: 1024px) {
     .splash-container {
         #intro-container {
+            #programming{
+                margin-top: -30vh;
+                width: 70%;
+            }
             #intro {
                 font-size: 125%;
             }
@@ -424,9 +324,6 @@
         #intro-container {
             #intro {
                 font-size: 200%;
-            }
-            #programming {
-                margin-left: 15%;
             }
         }
     }

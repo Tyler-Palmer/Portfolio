@@ -129,16 +129,19 @@ class Landing extends Component {
                             )}
                             {thing.headline === "Contact" && (
                                 <Fragment>
-                                <div className="contact-container">
                                     <Link
                                         onClick={this.props.hideSplash}
                                         to="/contact"
                                     >
-                                        Contact Form
+                                        <div className="contact-container">
+                                            Contact Form
+                                        </div>
                                     </Link>
-                                </div>
-                                <h3>Resume</h3>
-                                <a href={thing.resume}><div className="resume"></div></a>
+
+                                    <h3>Resume</h3>
+                                    <a href={thing.resume}>
+                                        <div className="resume" />
+                                    </a>
                                 </Fragment>
                             )}
                         </div>

@@ -49,7 +49,7 @@ class Contact extends Component {
             comment: this.state.comment
         };
         await axios
-            .post("/api/form", data)
+            .post("/email", data)
             .then(
                 this.setState(prevState => ({
                     sent: !prevState.sent,

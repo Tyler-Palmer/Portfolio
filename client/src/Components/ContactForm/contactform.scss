@@ -3,13 +3,13 @@
 .contactForm-wrapper {
     width: 100vw;
     height: 100vh;
-    background-color: #ccc9dc;
+    background-color: #FF003D;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    .back-button{
+
+    .back-button {
         height: 100%;
         width: 30%;
         display: flex;
@@ -17,16 +17,16 @@
         align-self: flex-end;
         align-items: center;
         margin-bottom: 0;
-        margin-top: 10px;
+        margin-top: 10%;
         margin-right: 5%;
 
-        a{
+        a {
             text-decoration: none;
             color: $purple;
             font-weight: bolder;
             font-size: 2.5em;
-            
-            &:hover{
+
+            &:hover {
                 color: white;
             }
         }
@@ -35,7 +35,7 @@
     .sidebar {
         width: 90%;
         margin: 10px 0px 20px 0px;
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.5);
         border: 3px solid rgba(255, 255, 255, 0.2);
         border-radius: 5%;
         padding: 10px;
@@ -76,6 +76,22 @@
                 color: white;
                 margin: 0;
             }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .contactForm-wrapper {
+        .sidebar {
+            width: 60%;
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .contactForm-wrapper{
+        .sidebar{
+            margin-bottom: 15%;
         }
     }
 }

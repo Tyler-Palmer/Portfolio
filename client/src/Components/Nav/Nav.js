@@ -32,7 +32,7 @@ class Nav extends Component {
         <div className="logo"></div>
         <div className="navigation">
           {this.props.things.map(thing => (
-            <div key={thing.id}>
+            <div key={thing.id} className="nav-item">
               <Anchor 
                 href={`#${thing.id}`}
                 selected={thing.id === this.props.activeThing2.id}
