@@ -48,6 +48,11 @@
     background-size: contain;
     z-index: 100;
     color: white;
+
+    @media(min-width: 1024px){
+        height: 75px;
+        width: 75px;
+    }
 }
 
 //Projects

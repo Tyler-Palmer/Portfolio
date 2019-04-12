@@ -287,9 +287,11 @@
 
 @media (min-width: 768px) {
     .landing-wrapper {
-        #d{
-            .contact-container{
+        #d {
+            .contact-container {
                 width: 40%;
+                font-size: 1.25em;
+
             }
         }
         .text-card {
@@ -306,6 +308,19 @@
 @media (min-width: 1024px) {
     .landing-wrapper {
         .text-card {
+            h3 {
+                font-size: 2em;
+            }
+
+            .picture {
+                height: 200px;
+                width: 200px;
+            }
+
+            .list-container {
+                font-size: 1.5em;
+            }
+
             .projects-container {
                 .tech-container {
                     h4 {

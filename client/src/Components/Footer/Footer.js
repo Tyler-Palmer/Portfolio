@@ -29,6 +29,9 @@ const Footer = () => {
                 </div>
                 </a>
             </div>
+            <div className="copyright">
+            <p>Copyright © 2019 Tyler Palmer</p>
+            </div>
         </div>
     );
 };
