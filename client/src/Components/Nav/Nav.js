@@ -29,7 +29,9 @@ class Nav extends Component {
   render() {
     return (
       <div className="nav-container">
+        <a href="#a">
         <div className="logo"></div>
+        </a>
         <div className="navigation">
           {this.props.things.map(thing => (
             <div key={thing.id} className="nav-item">

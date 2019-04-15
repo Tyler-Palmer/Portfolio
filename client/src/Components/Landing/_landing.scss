@@ -262,9 +262,6 @@
                     background-image: url(./../assets/xillow.png);
                     object-fit: cover;
                     overflow: hidden;
-                    height: 100%;
-                    width: 100%;
-                    // background-size: cover;
                 }
             }
             .cfo-annual{
@@ -290,6 +287,10 @@
 
                 li {
                     margin-left: 25px;
+
+                    &:hover{
+                        color: $red;
+                    }
                 }
             }
 

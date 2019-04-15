@@ -66,7 +66,7 @@ class ContentProvider extends Component {
             text: "",
             items: [
                 {
-                    title: "xillow",
+                    title: "Xillow",
                     tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "API", "Axios", "SASS", "Data Scraping"],
                     description:"A Salt Lake City replication of the main functions of the Xillow real estate website. This is a collaborative project between myself and a friend, it involves user authentication, fully CRUD user house listing tracking, mapping using the Google Maps API, news articles and is fully responsive.",
                     live: "https://xillow.herokuapp.com/",

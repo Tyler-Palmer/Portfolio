@@ -61,7 +61,6 @@ class Contact extends Component {
     };
 
     render() {
-        console.log(this.state);
         return (
             <div className="form-wrapper">
                 <ContactForm

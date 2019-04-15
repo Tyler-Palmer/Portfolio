@@ -38,7 +38,7 @@ class App extends Component {
         this.setState(prevState => ({
             showSplash: !prevState.showSplash
         }));
-        console.log("other setState hid splash");
+        console.log("non-conditional setState hid splash");
     };
 
     toggleNav = () => {

@@ -106,9 +106,11 @@ class Landing extends Component {
                                                 key={x.class}
                                             >
                                                 <h3>{x.title}</h3>
+                                                <a href={x.live}>
                                                 <div
                                                     className={`${x.class}pic`}
                                                 />
+                                                </a>
                                                 <div className="tech-container">
                                                     <h4>Tech:</h4>
                                                     <ul className="tech">
