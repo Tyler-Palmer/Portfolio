@@ -90,12 +90,12 @@ class ContentProvider extends Component {
                     class: "photo"
                 },
                 {
-                    title: "Zillow",
+                    title: "xillow",
                     tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "API", "Axios", "SASS", "Data Scraping"],
-                    description:"This is a full-stack group project between myself and a friend designed to replicate the main functions of the Xillow real estate website. It involves multiple 3rd party APIs, and user authentication.",
-                    live: "#",
-                    git: "#",
-                    class: "zillow"
+                    description:"A Salt Lake City replication of the main functions of the Xillow real estate website. This is a collaborative project between myself and a friend, it involves user authentication, fully CRUD user house listing tracking, mapping using the Google Maps API, news articles and is fully responsive.",
+                    live: "https://xillow.herokuapp.com/",
+                    git: "https://github.com/Tyler-Palmer/xillow",
+                    class: "xillow"
                 },
                 {
                     title: "CSS Zen Garden",

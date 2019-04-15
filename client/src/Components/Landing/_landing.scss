@@ -254,12 +254,17 @@
                     @include linearGradient($random-color, lightest);
                 }
             }
-            .zillow {
+            .xillow {
                 @include project-set;
 
-                .zillowpic {
+                .xillowpic {
                     @include projectPic;
-                    @include linearGradient($random-color, dark);
+                    background-image: url(./../assets/xillow.png);
+                    object-fit: cover;
+                    overflow: hidden;
+                    height: 100%;
+                    width: 100%;
+                    // background-size: cover;
                 }
             }
             .cfo-annual{
@@ -267,7 +272,7 @@
                 
                 .cfo-annualpic{
                     @include projectPic;
-                    background-image: url(./../assets/cfo-report.png)
+                    background-image: url(./../assets/cfo-report.png);
                 }
             }
             .cfo-event{

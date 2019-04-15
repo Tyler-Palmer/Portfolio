@@ -122,10 +122,10 @@ class Landing extends Component {
                                                 <hr />
                                                 <p>{x.description}</p>
                                                 <ul className="links">
-                                                    <a href={x.live}>
+                                                    <a target ="_blank" rel="noopener noreferrer" href={x.live}>
                                                         <li>Live</li>
                                                     </a>
-                                                    <a href={x.git}>
+                                                    <a target ="_blank" rel="noopener noreferrer" href={x.git}>
                                                         <li>Git</li>
                                                     </a>
                                                 </ul>
