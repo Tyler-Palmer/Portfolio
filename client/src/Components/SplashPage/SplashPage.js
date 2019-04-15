@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Spring } from "react-spring/renderprops";
 import styled from "styled-components";
-import { TweenMax } from "gsap";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import {withRouter} from 'react-router-dom'
 
@@ -18,7 +17,7 @@ const ArrowWrapper = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    margin-top: -15vh;
+    margin-top: -20vh;
     z-index: 130;
     display: flex;
     justify-content: center;
@@ -39,15 +38,6 @@ class SplashPage extends Component {
         this._isMounted = false;
     }
 
-    // fadingInLetters = () => {
-    //     const timer = setInterval(() => {
-    //         if (this.state.opacity >= 1) {
-    //             clearInterval(timer);
-    //         }
-    //         this.setState({ opacity: this.state.opacity + 0.1 });
-    //     }, 100);
-    // };
-
     componentDidMount() {
         this._isMounted = true;
         // this.props.hideSplash()
@@ -55,14 +45,6 @@ class SplashPage extends Component {
             () => this.setState({ show: true }),
             2500
         );
-
-        // this.animateArrow = TweenMax.fromTo(
-        //     "#arrow",
-        //     0.95,
-        //     { y: -10 },
-        //     { y: 0, repeat: -1, yoyo: true }
-        // ).pause();
-        // this._isMounted && this.animateArrow.play();
     }
 
     componentWillUnmount() {
@@ -70,7 +52,6 @@ class SplashPage extends Component {
      }
      
     render() {
-        console.log(this.state)
         return (
             <div className="splash-container" onScroll={this.handleScroll}>
                 <Parallax ref={ref => (this.parallax = ref)} pages={2}>

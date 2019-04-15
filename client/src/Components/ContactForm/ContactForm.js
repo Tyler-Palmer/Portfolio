@@ -133,7 +133,7 @@ class ContactForm extends Component {
         return (
             <div className="contactForm-wrapper">
                 <div className="back-button">
-                    <Link to="/">Back</Link>
+                    <Link onClick={this.props.toggleNav} to="/">Back</Link>
                 </div>
                 <Sidebar native state={state}>
                     {({ x }) => (

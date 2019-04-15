@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 
-import { LoremIpsum } from "lorem-ipsum";
+// import { LoremIpsum } from "lorem-ipsum";
 
-const lorem = new LoremIpsum({
-    sentencesPerParagraph: {
-        min: 4,
-        max: 10
-    },
-    wordsPerSentence: {
-        max: 16,
-        min: 4
-    }
-});
-const example = lorem.generateParagraphs(5);
+// const lorem = new LoremIpsum({
+//     sentencesPerParagraph: {
+//         min: 4,
+//         max: 10
+//     },
+//     wordsPerSentence: {
+//         max: 16,
+//         min: 4
+//     }
+// });
+// const example = lorem.generateParagraphs(5);
 
 const { Consumer, Provider } = React.createContext();
 
@@ -27,7 +27,7 @@ class ContentProvider extends Component {
         {
             id: "a",
             headline: "About Me",
-            text: "I've worn many hats over the years, the most recent of which is that of web developer. Some of my background includes work for small business, non-profit, consulting, high-adventure (bungee jumping), events, food and beverage, sales, photography, design, soil/mineral science, technical analysis and executive-management. I also am much more than my employment, in my free time I enjoy coding personal projects, learning new technologies, reading, rock climbing, skiing, slacklining, biking, hiking, camping and many more present participles. My greatest driving force in life is to leave a positive impact and to excel at what I do and do many things.",
+            text: "I've worn many hats over the years, the most recent of which is that of web developer. Some of my background includes work for small business, non-profit, consulting, high-adventure (bungee jumping), events, food and beverage, sales, photography, design, soil/mineral science, technical analysis and executive-management. I also am much more than my employment, in my free time I enjoy coding personal projects, learning new technologies, reading, rock climbing, skiing, slacklining, biking, hiking, camping and many more present participles. My greatest driving force in life is to leave a positive impact and to excel at what I do, and do many things.",
             sub: "",
             technologies: [],
             sub2: "",
@@ -42,6 +42,7 @@ class ContentProvider extends Component {
               "html",
               "css",
               "sass",
+              "styled-components",
               "javascript",
               "react",
               "nodejs",
@@ -51,17 +52,12 @@ class ContentProvider extends Component {
               "bootstrap",
               "photoshop",
               "illustrator",
-              "indesign"
+              "indesign",
+              "git",
+              "npm"
           ],
-          sub2: "Additional tools",
-          tools: [
-          "Github",
-          "NPM",
-          "VSCode", 
-          "Styled Components",
-          "Libraries",
-          "Imagination!"
-        ]
+          sub2: "",
+          tools: []
       },
         
         {
@@ -124,6 +120,20 @@ class ContentProvider extends Component {
                     live: "#",
                     git: "#",
                     class: "mario"
+                },
+                {
+                    title: "Annual Report",
+                    tech: ["InDesign","Illustrator", "Photoshop"],
+                    description: "An annual report for Clean Fuels Ohio, an alternative fuels nonprofit, all designs, photography and data were created/implemented by myself ",
+                    live: "https://drive.google.com/open?id=1loi_mW6lgCdjzasUnrn1j1PhBEpl7Wxj",
+                    class: "cfo-annual"
+                },
+                {
+                    title: "Event Poster",
+                    tech: ["Indesign","Illustrator"],
+                    description: "An event poster for an electric vehicle informational and discussion",
+                    live: "https://drive.google.com/open?id=0ByJJeFmMgbhSeVdpRE1kcTFsbTg",
+                    class: "cfo-event"
                 }
             ]
         },

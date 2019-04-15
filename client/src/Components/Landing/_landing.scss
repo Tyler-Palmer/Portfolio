@@ -21,11 +21,15 @@
 
     h1 {
         font-size: 3em;
+        color: $purple
+    }
+    h3{
+        font-size: 1.5em;
     }
     #a {
         p {
             font-size: 1em;
-            line-height: 1.3em;
+            line-height: 1.5em;
             margin-left: 5%;
         }
     }
@@ -131,55 +135,67 @@
 
             .html {
                 @include icon-set;
-                background-image: url("https://cdn.svgporn.com/logos/html-5.svg");
+                background-image: url(./../assets/html-5.svg);
             }
             .css {
                 @include icon-set;
-                background-image: url("https://cdn.svgporn.com/logos/css-3.svg");
+                background-image: url(./../assets/css-3.svg);
             }
             .sass {
                 @include icon-set;
-                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/512px-Sass_Logo_Color.svg.png");
+                background-image: url(./../assets/512px-Sass_Logo_Color.svg.png);
+            }
+            .styled-components{
+                @include icon-set;
+                background-image: url(./../assets/styled-components-logo.png);
             }
             .javascript {
                 @include icon-set;
-                background-image: url("https://cdn.svgporn.com/logos/javascript.svg");
+                background-image: url(./../assets/Javascript_badge.svg);
             }
             .react {
                 @include icon-set;
-                background-image: url("https://cdn.svgporn.com/logos/react.svg");
+                background-image: url(./../assets/react.svg);
             }
             .nodejs {
                 @include icon-set;
-                background-image: url("https://cdn.svgporn.com/logos/nodejs.svg");
+                background-image: url(./../assets/nodejs.svg);
             }
             .express {
                 @include icon-set;
-                background-image: url("https://cdn.svgporn.com/logos/express.svg");
+                background-image: url(./../assets/express.svg);
             }
             .mongodb {
                 @include icon-set;
-                background-image: url("https://cdn.svgporn.com/logos/mongodb.svg");
+                background-image: url(./../assets/mongodb.svg);
             }
             .api {
                 @include icon-set;
-                background-image: url("https://png2.kisspng.com/sh/0167b576ca5b57c6d4b46c3d0e9388b9/L0KzQYm3WMA5N6pweZH0aYP2gLBuTfxwb5CyeeJ5bHnmccXwjB4ueKN0fARqbX3sfri0if51baNredVuLXPyfcH8lPVzNaF3RelxYYSwfbLyhgMuOWE1SKI2Y4X2hLF0hgJ0NZ1ug9c2aXbvibTvggQucZdxkdVxYT24cofpUfMzbZY4fqoAND65SIi3V8YxO2I6S6UCNEa1QoOCU8M5NqFzf3==/kisspng-logo-application-programming-interface-computer-pr-what-makes-10000-customers-like-iflychat-iflycha-5b6b1c2ee3f854.6870760315337462229338.png");
+                background-image: url(./../assets/api-logo.png);
             }
             .bootstrap {
                 @include icon-set;
-                background-image: url("http://pluspng.com/img-png/bootstrap-png-bootstrap-1024.png");
+                background-image: url(./../assets/bootstrap-png-bootstrap-1024.png);
             }
             .photoshop {
                 @include icon-set;
-                background-image: url("http://pluspng.com/img-png/photoshop-logo-png-open-2000.png");
+                background-image: url(./../assets/photoshop-logo-png-open-2000.png);
             }
             .illustrator {
                 @include icon-set;
-                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/512px-Adobe_Illustrator_CC_icon.svg.png");
+                background-image: url(./../assets/512px-Adobe_Illustrator_CC_icon.svg.png);
             }
             .indesign {
                 @include icon-set;
-                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Adobe_InDesign_CC_icon.svg/512px-Adobe_InDesign_CC_icon.svg.png");
+                background-image: url(./../assets/Adobe_InDesign_CC_icon.svg.png);
+            }
+            .git {
+                @include icon-set;
+                background-image: url(./../assets/Git-Icon-1788C.png)
+            }
+            .npm {
+                @include icon-set;
+                background-image: url(./../assets/Npm-logo.svg.png)
             }
         }
         .projects-container {
@@ -246,6 +262,23 @@
                     @include linearGradient($random-color, dark);
                 }
             }
+            .cfo-annual{
+                @include project-set;
+                
+                .cfo-annualpic{
+                    @include projectPic;
+                    background-image: url(./../assets/cfo-report.png)
+                }
+            }
+            .cfo-event{
+                @include project-set;
+
+                .cfo-eventpic{
+                    @include projectPic;
+                    background-image: url(./../assets/event.jpg);
+                }
+            }
+
             .links {
                 display: flex;
                 flex-direction: row;
@@ -302,6 +335,18 @@
 
 @media (min-width: 768px) {
     .landing-wrapper {
+        #a {
+            p{
+                line-height: 1.8em;
+                font-size: 1.3em;
+            }
+            h1{
+                font-size: 4em;
+            }
+            h3{
+                font-size: 2em;
+            }
+        }
         #d {
             .contact-container {
                 font-size: 1.25em;
@@ -320,7 +365,12 @@
 
 @media (min-width: 1024px) {
     .landing-wrapper {
-
+        #a{
+            p{
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+        }
         #d {
             .contact-container {
                 font-size: 1.5em;

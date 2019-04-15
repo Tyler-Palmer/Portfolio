@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import Nav from "./Components/Nav/Nav";
 import Landing from "./Components/Landing/Landing";
@@ -15,7 +15,8 @@ class App extends Component {
                 id: null,
                 ratio: 0
             },
-            showSplash: true
+            showSplash: true,
+            showNav: true
         };
         this._isMounted = false;
     }
@@ -32,10 +33,18 @@ class App extends Component {
             this.setState({
                 showSplash: false
             });
+            console.log("pathname hid splash");
         }
-        this.setState({
-            showSplash: false
-        });
+        this.setState(prevState => ({
+            showSplash: !prevState.showSplash
+        }));
+        console.log("other setState hid splash");
+    };
+
+    toggleNav = () => {
+        this.setState(prevState => ({
+            showNav: !prevState.showNav
+        }));
     };
 
     componentDidMount() {
@@ -63,19 +72,14 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state);
-        console.log(`App mount: ${this._isMounted}`);
         const { location } = this.props;
         return (
             <div className="app-wrapper">
                 {this.state.showSplash && (
-                    <Fragment>
-                        <SplashPage
-                            className="obs"
-                            hideSplash={this.hideSplash}
-                        />
-                        <Nav activeThing2={this.state.activeThing2} />
-                    </Fragment>
+                    <SplashPage className="obs" hideSplash={this.hideSplash} />
+                )}
+                {this.state.showNav && (
+                    <Nav activeThing2={this.state.activeThing2} />
                 )}
                 <TransitionGroup>
                     <CSSTransition
@@ -95,10 +99,19 @@ class App extends Component {
                                         className="obs"
                                         hideSplash={this.hideSplash}
                                         showSplash={this.state.showSplash}
+                                        toggleNav={this.toggleNav}
                                     />
                                 )}
                             />
-                            <Route path="/Contact" component={Contact} />
+                            <Route
+                                path="/Contact"
+                                render={props => (
+                                    <Contact
+                                        {...props}
+                                        toggleNav={this.toggleNav}
+                                    />
+                                )}
+                            />
                         </Switch>
                     </CSSTransition>
                 </TransitionGroup>

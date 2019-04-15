@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import ContactForm from "../ContactForm/ContactForm";
 import axios from "axios";
 
 class Contact extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             name: "",
             email: "",
@@ -75,6 +75,7 @@ class Contact extends Component {
                     sent={this.state.sent}
                     show ={this.state.show}
                     handleClick={this.handleClick}
+                    toggleNav ={this.props.toggleNav}
                 />
             </div>
         );

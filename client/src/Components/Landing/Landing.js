@@ -44,7 +44,13 @@ class Landing extends Component {
             root: this.rootRef.current,
             threshold: new Array(101).fill(0).map((v, i) => i * 0.01)
         });
+
     }
+    openContact = () => {
+        this.props.toggleNav()
+        this.props.hideSplash()
+    }
+    
     componentDidMount() {
         Object.values(this.singleRefs).forEach(value =>
             this.observer.observe(value.ref.current)
@@ -130,7 +136,7 @@ class Landing extends Component {
                             {thing.headline === "Contact" && (
                                 <Fragment>
                                     <Link
-                                        onClick={this.props.hideSplash}
+                                        onClick={this.openContact}
                                         to="/contact"
                                     >
                                         <div className="contact-container">
