@@ -66,30 +66,6 @@ class ContentProvider extends Component {
             text: "",
             items: [
                 {
-                    title: "Personality Analyzer",
-                    tech: ["React", "Express", "Node.js", "CSS", "API", "Axios"],
-                    description: "This is a front-end site designed with an Express server to utilize the IBM Watson Personality Analyzer API and provideds interesting insight into text input.",
-                    live: "https://tp-personality-insights.herokuapp.com/",
-                    git: "https://github.com/Tyler-Palmer/ibm-personality-project",
-                    class: "ibm"
-                },
-                {
-                    title: "Star Wars Bounty Hunter CRUD",
-                    tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "CSS"],
-                    description: "A Star Wars themed, full-stack CRUD todo app utilizing a database.",
-                    live: "#",
-                    git: "#",
-                    class: "bounty"
-                },
-                {
-                    title: "Photography Website",
-                    tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "Axios", "CSS/SASS"],
-                    description: "WORK IN PROGRESS: This is a full-stack website designed to host and display my own personal photography and inevitably sell prints directly from.",
-                    live: "#",
-                    git: "#",
-                    class: "photo"
-                },
-                {
                     title: "xillow",
                     tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "API", "Axios", "SASS", "Data Scraping"],
                     description:"A Salt Lake City replication of the main functions of the Xillow real estate website. This is a collaborative project between myself and a friend, it involves user authentication, fully CRUD user house listing tracking, mapping using the Google Maps API, news articles and is fully responsive.",
@@ -97,6 +73,15 @@ class ContentProvider extends Component {
                     git: "https://github.com/Tyler-Palmer/xillow",
                     class: "xillow"
                 },
+                {
+                    title: "Personality Analyzer",
+                    tech: ["React", "Express", "Node.js", "CSS", "API", "Axios"],
+                    description: "This is a front-end site designed with an Express server to utilize the IBM Watson Personality Analyzer API and provideds interesting insight into text input.",
+                    live: "https://tp-personality-insights.herokuapp.com/",
+                    git: "https://github.com/Tyler-Palmer/ibm-personality-project",
+                    class: "ibm"
+                },
+               
                 {
                     title: "CSS Zen Garden",
                     tech: ["HTML", "CSS"],
@@ -113,6 +98,23 @@ class ContentProvider extends Component {
                     git: "https://github.com/Tyler-Palmer/business-time",
                     class: "business"
                 },
+                {
+                    title: "Photography Website",
+                    tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "Axios", "CSS/SASS"],
+                    description: "WORK IN PROGRESS: This is a full-stack website designed to host and display my own personal photography and inevitably sell prints directly from.",
+                    live: "https://tp-photo.herokuapp.com/",
+                    git: "https://github.com/Tyler-Palmer/personal-photography",
+                    class: "photo"
+                },
+                {
+                    title: "Star Wars Bounty Hunter CRUD",
+                    tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "CSS"],
+                    description: "A Star Wars themed, full-stack CRUD todo app utilizing a database.",
+                    live: "#",
+                    git: "#",
+                    class: "bounty"
+                },
+              
                 {
                     title: "Mario Pest Control",
                     tech: ["HTML", "CSS", "Javascript"],
