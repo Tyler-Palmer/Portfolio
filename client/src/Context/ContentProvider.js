@@ -47,6 +47,7 @@ class ContentProvider extends Component {
               "react",
               "nodejs",
               "express",
+              "mongoose",
               "mongodb",
               "api",
               "bootstrap",
@@ -68,7 +69,7 @@ class ContentProvider extends Component {
                 {
                     title: "Xillow",
                     tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "API", "Axios", "SASS", "Data Scraping"],
-                    description:"A Salt Lake City replication of the main functions of the Xillow real estate website. This is a collaborative project between myself and a friend, it involves user authentication, fully CRUD user house listing tracking, mapping using the Google Maps API, news articles and is fully responsive.",
+                    description:"A Salt Lake City-based replication of the main functions of the Xillow real estate website. This is a collaborative project between myself and a friend, it involves user authentication, fully CRUD user house listing tracking, mapping using the Google Maps API, news articles and is fully responsive.",
                     live: "https://xillow.herokuapp.com/",
                     git: "https://github.com/Tyler-Palmer/xillow",
                     class: "xillow"
@@ -108,13 +109,12 @@ class ContentProvider extends Component {
                 },
                 {
                     title: "Star Wars Bounty Hunter CRUD",
-                    tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "CSS"],
-                    description: "A Star Wars themed, full-stack CRUD todo app utilizing a database.",
-                    live: "#",
-                    git: "#",
+                    tech: ["React", "Express", "MongoDb", "Mongoose", "Node.js", "CSS", "Bootstrap"],
+                    description: "A Star Wars themed, full-stack, fully CRUD to-do app utilizing a mongoDB database.",
+                    live: "https://bounty-crud.herokuapp.com/",
+                    git: "https://github.com/Tyler-Palmer/Star-Wars-to-do",
                     class: "bounty"
                 },
-              
                 {
                     title: "Mario Pest Control",
                     tech: ["HTML", "CSS", "Javascript"],

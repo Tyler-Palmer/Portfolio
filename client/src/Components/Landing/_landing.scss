@@ -165,6 +165,10 @@
                 @include icon-set;
                 background-image: url(./../assets/express.svg);
             }
+            .mongoose{
+                @include icon-set;
+                background-image: url(./../assets/mongoose.png);
+            }
             .mongodb {
                 @include icon-set;
                 background-image: url(./../assets/mongodb.svg);
@@ -243,7 +247,7 @@
 
                 .bountypic {
                     @include projectPic;
-                    @include linearGradient($random-color, light);
+                    background-image: url(./../assets/star-wars.png)
                 }
             }
             .photo {
