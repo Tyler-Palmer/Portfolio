@@ -49,6 +49,7 @@ class ContentProvider extends Component {
               "express",
               "mongoose",
               "mongodb",
+              "jest",
               "api",
               "bootstrap",
               "photoshop",

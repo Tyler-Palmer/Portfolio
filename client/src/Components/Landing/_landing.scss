@@ -173,6 +173,10 @@
                 @include icon-set;
                 background-image: url(./../assets/mongodb.svg);
             }
+            .jest{
+                @include icon-set;
+                background-image: url(./../assets/jestlogo.png)
+            }
             .api {
                 @include icon-set;
                 background-image: url(./../assets/api-logo.png);
