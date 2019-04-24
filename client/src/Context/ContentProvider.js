@@ -145,7 +145,7 @@ class ContentProvider extends Component {
             headline: "Contact",
             text: "I would love to connect, drop me a line on the contact form or reach out via any of the channels below.",
             text2: "This website was written in React.",
-            resume: "https://drive.google.com/open?id=1rdigwXc_Ri5-pYWZ-bhvuwVarYVpB6vG"
+            resume: "https://drive.google.com/open?id=1dKQHrNnJ54o81HhzxjyKFPpJCRf2Xsi0"
         }
         // {
         //     id: "e",
