@@ -205,6 +205,10 @@
                 @include icon-set;
                 background-image: url(./../assets/Npm-logo.svg.png)
             }
+            .wordpress {
+                @include icon-set;
+                background-image: url(./../assets/wp.png);
+            }
         }
         .projects-container {
             width: 100%;

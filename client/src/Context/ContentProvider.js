@@ -56,7 +56,8 @@ class ContentProvider extends Component {
               "illustrator",
               "indesign",
               "git",
-              "npm"
+              "npm",
+              "wordpress"
           ],
           sub2: "",
           tools: []
