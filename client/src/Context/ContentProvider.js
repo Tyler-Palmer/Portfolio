@@ -48,6 +48,7 @@ class ContentProvider extends Component {
               "nodejs",
               "express",
               "mongoose",
+              "graphql",
               "mongodb",
               "jest",
               "api",

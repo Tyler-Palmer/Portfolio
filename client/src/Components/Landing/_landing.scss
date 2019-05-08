@@ -169,6 +169,10 @@
                 @include icon-set;
                 background-image: url(./../assets/mongooseBadge.png);
             }
+            .graphql{
+                @include icon-set;
+                background-image: url(./../assets/.graphql.png)
+            }
             .mongodb {
                 @include icon-set;
                 background-image: url(./../assets/mongodb.svg);
