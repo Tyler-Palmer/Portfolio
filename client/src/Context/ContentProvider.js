@@ -118,14 +118,14 @@ class ContentProvider extends Component {
                     git: "https://github.com/Tyler-Palmer/Star-Wars-to-do",
                     class: "bounty"
                 },
-                {
-                    title: "Mario Pest Control",
-                    tech: ["HTML", "CSS", "Javascript"],
-                    description: "A basic page created as an exercise to perform Mario-themed math equations.",
-                    live: "#",
-                    git: "#",
-                    class: "mario"
-                },
+                // {
+                //     title: "Mario Pest Control",
+                //     tech: ["HTML", "CSS", "Javascript"],
+                //     description: "A basic page created as an exercise to perform Mario-themed math equations.",
+                //     live: "#",
+                //     git: "#",
+                //     class: "mario"
+                // },
                 {
                     title: "Annual Report",
                     tech: ["InDesign","Illustrator", "Photoshop"],
