@@ -1,8 +1,16 @@
 @import "../ComponentStyles/base";
 
+.splash-container::-webkit-scrollbar{
+    height: 0;
+    width: 0;
+}
 .splash-container {
     @include splash-dim;
     position: relative;
+    width: 100vw;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
 
     .hello-container {
         height: 25%;
