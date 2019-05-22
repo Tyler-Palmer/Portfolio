@@ -66,7 +66,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 58vh;
+    height: 340px;
     width: 90vw;
     border: 2px solid rgba(215,215,215,1);
     padding: 5px;
@@ -85,8 +85,8 @@
         margin: 20px;
     }
     @media(min-width: 1024px){
-        height: 64vh;
-        width: 28vw;
+        height: 440px;
+        width: 29vw;
         margin: 15px;
 
         h3{
@@ -97,7 +97,7 @@
         }
     }
     @media(min-width: 1440px){
-        height: 44vh;
+        height: 400px;
     }
 
     .tech{

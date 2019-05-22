@@ -129,23 +129,30 @@ class ContentProvider extends Component {
                 {
                     title: "Annual Report",
                     tech: ["InDesign","Illustrator", "Photoshop"],
-                    description: "An annual report for Clean Fuels Ohio, an alternative fuels nonprofit, all designs, photography and data were created/implemented by myself ",
+                    description: "An annual report for Clean Fuels Ohio, an alternative fuels nonprofit, all designs, photography and data were created/implemented by myself",
                     live: "https://drive.google.com/open?id=1loi_mW6lgCdjzasUnrn1j1PhBEpl7Wxj",
                     class: "cfo-annual"
                 },
                 {
                     title: "Event Poster",
                     tech: ["Indesign","Illustrator"],
-                    description: "An event poster for an electric vehicle informational and discussion",
-                    live: "https://drive.google.com/open?id=0ByJJeFmMgbhSeVdpRE1kcTFsbTg",
+                    description: "An event poster created for an electric vehicle informational and discussion",
+                    live: "https://drive.google.com/open?id=1sBGdFRjo28tkQJTDAegSF-uxSv6opqPC",
                     class: "cfo-event"
+                },
+                {
+                    title: "Electric Vehicle Infographic",
+                    tech: ["Indesign","Illustrator"],
+                    description: "An infographic created to detail electric vehicle ranges offered at the time of creation",
+                    live: "https://drive.google.com/open?id=1OsH4A_3FJbHkcjdyUdkOxOx-8iIFnPAt",
+                    class: "cfo-design"
                 }
             ]
         },
         {
             id: "d",
             headline: "Contact",
-            text: "I would love to connect, drop me a line on the contact form or reach out via any of the channels below.",
+            text: "I would love to connect, drop me a line on the contact form or reach out via any of the channels below",
             text2: "This website was written in React.",
             resume: "https://drive.google.com/open?id=1c1Wi2HW_Efmu2MO5PPTeCX0ZFPLGk8Ec"
         }

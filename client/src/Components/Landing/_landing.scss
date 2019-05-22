@@ -293,7 +293,16 @@
 
                 .cfo-eventpic{
                     @include projectPic;
-                    background-image: url(./../assets/event.jpg);
+                    background-image: url(./../assets/CFO_workplace-charging_p2.jpg);
+                }
+            }
+
+            .cfo-design{
+                @include project-set;
+
+                .cfo-designpic{
+                    @include projectPic;
+                    background-image: url(./../assets/CFO-Info.jpg);
                 }
             }
 
@@ -314,7 +323,7 @@
                 display: flex;
                 flex-direction: row;
                 width: 100%;
-                // margin-top: 5px;
+                margin-top: 5px;
                 margin-left: 10px;
                 margin-right: 10px;
                 margin-bottom: 5px;

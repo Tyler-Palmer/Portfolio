@@ -127,9 +127,12 @@ class Landing extends Component {
                                                     <a target ="_blank" rel="noopener noreferrer" href={x.live}>
                                                         <li>Live</li>
                                                     </a>
+                                                    {
+                                                    x.git &&
                                                     <a target ="_blank" rel="noopener noreferrer" href={x.git}>
                                                         <li>Git</li>
                                                     </a>
+                                                    }
                                                 </ul>
                                             </div>
                                         ))}
